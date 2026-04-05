@@ -38,7 +38,7 @@ A Godot 4.6+ editor plugin for viewing and editing Splatoon 2 map layouts stored
 - **Rail Editing** with linear and Bézier curve support, dynamic line rendering
 - **Area Objects** displayed as semi-transparent volumes with per-type icons
 - **Add/Delete** objects and rails with full undo/redo support
-- **Save** to BYML, SZS, or Pack format with SARC alignment preservation
+- **Save** to BYAML, SZS, or Pack format with SARC alignment preservation
 - **4,300+ Actor Database** with parameters extracted from real game maps
 
 ---
@@ -265,7 +265,7 @@ Place your extracted `.szs` model files in the `Model/` directory, then run:
 tools\BfresToGltf\bin\Release\net8.0\BfresToGltf.exe Model\ ModelCache\ --batch
 ```
 
-This processes all `.szs` and `.bfres` files, outputting `.glb` files to `Modelcache/`.
+This processes all `.szs` and `.bfres` files, outputting `.glb` files to `ModelCache/`.
 
 **Option B: Convert from within Godot**
 
