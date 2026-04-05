@@ -1,0 +1,9 @@
+[submodule "gdext/godot-cpp"]
+	path = gdext/godot-cpp
+	url = https://github.com/godotengine/godot-cpp
+[submodule "oead"]
+	path = oead
+	url = https://github.com/zeldamods/oead
+[submodule "BfresLibrary"]
+	path = BfresLibrary
+	url = https://github.com/KillzXGaming/BfresLibrary

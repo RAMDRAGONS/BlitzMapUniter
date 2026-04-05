@@ -1,0 +1,52 @@
+# Build artifacts
+oead/build/
+gdext/godot-cpp/.sconf_temp/
+gdext/.sconsign.dblite
+
+# Compiled GDExtension binaries (platform-specific, rebuild from source)
+project/addons/blitz_map_uniter/bin/*.so
+project/addons/blitz_map_uniter/bin/*.dll
+project/addons/blitz_map_uniter/bin/*.dylib
+project/addons/blitz_map_uniter/bin/*.framework
+
+# .NET build artifacts
+tools/BfresToGltf/bin/
+tools/BfresToGltf/obj/
+BfresLibrary/**/bin/
+BfresLibrary/**/obj/
+
+# Game files (user-provided, not redistributable)
+Model/*.szs
+Model/*.bfres
+ModelCache/*.glb
+ModelCache/*.png
+
+# Godot import cache
+project/.godot/
+
+# Godot imported resources
+project/addons/blitz_map_uniter/data/icons/*.import
+
+# Pack files (game data, not redistributable)
+*.pack
+Mush.release.pack
+Map.pack
+
+# Encrypted/decrypted ActorDb working files
+ActorDbRef/*.dec.*
+
+# Python
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+*.user
+*.suo

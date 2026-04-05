@@ -1,0 +1,11 @@
+[configuration]
+entry_symbol = "oead_gdext_init"
+compatibility_minimum = "4.2"
+
+[libraries]
+linux.debug.x86_64 = "res://addons/blitz_map_uniter/bin/liboead_gdext.linux.template_debug.x86_64"
+linux.release.x86_64 = "res://addons/blitz_map_uniter/bin/liboead_gdext.linux.template_release.x86_64"
+windows.debug.x86_64 = "res://addons/blitz_map_uniter/bin/liboead_gdext.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://addons/blitz_map_uniter/bin/liboead_gdext.windows.template_release.x86_64.dll"
+macos.debug = "res://addons/blitz_map_uniter/bin/liboead_gdext.macos.template_debug.framework"
+macos.release = "res://addons/blitz_map_uniter/bin/liboead_gdext.macos.template_release.framework"

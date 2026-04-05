@@ -1,0 +1,111 @@
+#!/usr/bin/env python
+"""
+SConstruct for BlitzMapUniter GDExtension.
+Cross-platform build: works on Linux, Windows (MSVC/MinGW), and macOS.
+
+Prerequisites:
+  - oead must be pre-built via CMake in ../oead/build/
+  - godot-cpp submodule must be initialized
+
+Usage:
+  scons                            # Linux debug
+  scons target=template_release    # Linux release
+  scons platform=windows           # Windows cross-compile (requires MinGW)
+  scons platform=macos             # macOS (requires Xcode)
+"""
+import os
+import sys
+
+# Build godot-cpp
+env = SConscript("godot-cpp/SConstruct")
+
+# Re-enable exceptions - oead requires exception handling.
+# godot-cpp disables them by default, so we override here.
+if env["platform"] == "windows" and env.get("is_msvc", False):
+    # Remove /EHs-c- and add /EHsc
+    env["CXXFLAGS"] = [f for f in env.get("CXXFLAGS", []) if "/EHs" not in str(f)]
+    env.Append(CXXFLAGS=["/EHsc"])
+else:
+    # Remove -fno-exceptions and add -fexceptions
+    env["CXXFLAGS"] = [f for f in env.get("CXXFLAGS", []) if "-fno-exceptions" not in str(f)]
+    env.Append(CXXFLAGS=["-fexceptions"])
+
+# Paths
+oead_root = os.path.abspath("../oead")
+oead_build = os.path.join(oead_root, "build")
+
+# Our extension sources
+env.Append(CPPPATH=["src/"])
+sources = Glob("src/*.cpp")
+
+# oead includes
+env.Append(CPPPATH=[
+    os.path.join(oead_root, "src", "include"),
+    os.path.join(oead_root, "src"),
+    os.path.join(oead_root, "lib", "nonstd"),
+    os.path.join(oead_root, "lib", "abseil"),
+    os.path.join(oead_root, "lib", "ordered-map", "include"),
+    os.path.join(oead_root, "lib", "EasyIterator", "include"),
+])
+
+# C++ standard
+if env["platform"] == "windows" and env.get("is_msvc", False):
+    env.Append(CXXFLAGS=["/std:c++17"])
+else:
+    env.Append(CXXFLAGS=["-std=c++17"])
+
+# oead static libraries
+# Note: libc4core is already statically linked into libryml, do not include separately
+oead_libs = [
+    os.path.join(oead_build, "liboead.a"),
+    os.path.join(oead_build, "liboead_res.a"),
+    os.path.join(oead_build, "lib", "rapidyaml", "libryml.a"),
+    os.path.join(oead_build, "lib", "libyaml", "libyaml.a"),
+    os.path.join(oead_build, "lib", "zlib-ng", "libzlib.a"),
+]
+
+# On Windows with MSVC the static libs have different extensions
+if env["platform"] == "windows" and env.get("is_msvc", False):
+    oead_libs = [p.replace(".a", ".lib") if not os.path.exists(p) else p for p in oead_libs]
+
+# Abseil libraries needed by oead
+absl_base = os.path.join(oead_build, "lib", "abseil", "absl")
+absl_libs = []
+if os.path.isdir(absl_base):
+    for root, dirs, files in os.walk(absl_base):
+        for f in files:
+            if f.endswith(".a") or f.endswith(".lib"):
+                absl_libs.append(os.path.join(root, f))
+absl_libs.sort()
+
+all_static_libs = oead_libs + absl_libs
+
+# Link static libraries - use whole-archive to ensure all symbols are included
+# in the shared library (prevents runtime "undefined symbol" errors)
+existing_libs = [lib for lib in all_static_libs if os.path.exists(lib)]
+if env["platform"] == "linux" or env["platform"] == "macos":
+    env.Append(LINKFLAGS=["-Wl,--whole-archive"] + existing_libs + ["-Wl,--no-whole-archive"])
+    env.Append(LINKFLAGS=["-Wl,--allow-multiple-definition"])
+elif env["platform"] == "windows" and env.get("is_msvc", False):
+    env.Append(LINKFLAGS=["/WHOLEARCHIVE:" + lib for lib in existing_libs])
+    env.Append(LINKFLAGS=["/FORCE:MULTIPLE"])
+else:
+    # MinGW
+    env.Append(LINKFLAGS=["-Wl,--whole-archive"] + existing_libs + ["-Wl,--no-whole-archive"])
+    env.Append(LINKFLAGS=["-Wl,--allow-multiple-definition"])
+
+# Platform-specific system libraries
+if env["platform"] == "linux":
+    env.Append(LIBS=["pthread"])
+elif env["platform"] == "windows":
+    env.Append(LIBS=["ws2_32", "bcrypt", "advapi32"])
+
+# Output path
+output_dir = os.path.join("..", "project", "addons", "blitz_map_uniter", "bin")
+
+library = env.SharedLibrary(
+    target=os.path.join(output_dir, "liboead_gdext{}".format(env["suffix"])),
+    source=sources,
+)
+
+Default(library)
