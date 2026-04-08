@@ -110,7 +110,7 @@ func save_to_szs() -> PackedByteArray:
 	if byaml_data.is_empty():
 		return PackedByteArray()
 	# Use the original entry name if available, otherwise derive from current_file
-	var entry_name := _szs_entry_name if _szs_entry_name else current_file.get_basename() + ".byml"
+	var entry_name := _szs_entry_name if _szs_entry_name else current_file.get_basename() + ".byaml"
 	var files: Array = [{"name": entry_name, "data": byaml_data}]
 	var sarc_data := OeadSarc.build(files, _szs_endian, _szs_min_alignment)
 	return OeadYaz0.compress(sarc_data)

@@ -30,13 +30,14 @@ A Godot 4.6+ editor plugin for viewing and editing Splatoon 2 map layouts stored
 
 ## Features
 
-- **Load** Splatoon 2 map files: `.byml` (raw BYAML), `.szs` (Yaz0-compressed SARC), and `Map.pack` archives
+- **Load** Splatoon 2 map files: `.byaml` (raw BYAML), `.szs` (Yaz0-compressed SARC), and `Map.pack` archives
 - **3D Visualization** with cached GLTF models converted from game BFRES files
 - **Transform Editing** via Godot's native 3D gizmos (move, rotate, scale) with automatic coordinate conversion
 - **Parameter Inspector** with typed editors (bool/int/float/string), tooltips, and descriptions
 - **Link Visualization** and navigation between connected objects
 - **Rail Editing** with linear and Bézier curve support, dynamic line rendering
 - **Area Objects** displayed as semi-transparent volumes with per-type icons
+- **Debug Shape Gizmos** showing IDA-verified collision volumes (spheres, capsules, boxes, cylinders) for key actors
 - **Add/Delete** objects and rails with full undo/redo support
 - **Save** to BYAML, SZS, or Pack format with SARC alignment preservation
 - **4,300+ Actor Database** with parameters extracted from real game maps
@@ -107,7 +108,8 @@ BlitzMapUniter/
 │       │   ├── map_editor_dock.gd    # Editor dock panel
 │       │   └── map_inspector_plugin.gd # Custom inspector
 │       ├── data/                     # Static data
-│       │   ├── actor_db.json         # Actor definitions (4,300+ actors)
+│       │   ├── actordb.json          # Actor→class/model mapping (4,300+ actors)
+│       │   ├── actor_classes.json    # Class→params with IDA-confirmed hierarchy
 │       │   ├── param_descriptions.json # IDA-verified param docs
 │       │   └── icons/                # Per-type area/object icons
 │       └── bin/                      # Compiled GDExtension binaries
@@ -323,7 +325,7 @@ Objects are displayed in the 3D viewport with models (if cached) or colored plac
 | Purple cylinders | NPCs | `Npc_*` |
 | Orange lines | Rails | Linear and Bézier curves |
 
-- **Area objects** display a per-type icon sprite and can have their volume viewed through selection. `PaintedArea_Cylinder` uniquely always displays a semi-transparent volume for clearer visualization
+- **Area objects** display a per-type icon sprite; selecting an area object reveals a semi-transparent volume mesh showing its spatial extent. `PaintedArea_Cylinder` uses a cylindrical volume.
 - **Rails** render as connected lines; Bézier rails show smooth curves through control points
 - **Links** between objects are visualized as debug lines in the viewport
 
@@ -331,10 +333,10 @@ Objects are displayed in the 3D viewport with models (if cached) or colored plac
 
 **Transforms:** Select any object and use Godot's native 3D gizmos to move, rotate, or scale. Changes are automatically synced to the map data coordinate system on save.
 
-**Parameters:** When an object is selected, the **Inspector** panel displays editable parameters grouped by component:
+**Parameters:** When an object is selected, the **Inspector** panel displays editable parameters grouped by their origin class in the inheritance hierarchy (e.g. "Common", "Enemy", "Item", "Lift"):
 - Boolean → checkbox
 - Numeric → spinner
-- String → text field
+- String → text field (with ∅ null toggle)
 - Hover over labels to see IDA-verified parameter descriptions
 
 **Links:** The Inspector shows all links for the selected object. Click the **→** button to navigate to a linked object. Use **+ Add Link** to create new connections.
@@ -361,17 +363,27 @@ Objects are displayed in the 3D viewport with models (if cached) or colored plac
 
 ## Actor Database
 
-The plugin ships with `actor_db.json` containing **4,300+ actor definitions** extracted from:
+The plugin ships with a split actor database for **4,300+ actors**, using IDA-confirmed class hierarchy:
+
+- **`actordb.json`** — compact actor→{class, res, fmdb} mapping (670 KB)
+- **`actor_classes.json`** — class definitions with inheritance chain and parameter schemas (197 KB)
+
+This replaces the old monolithic `actor_db.json` (4.3 MB) with an 80% size reduction by eliminating redundant parameter duplication across actors of the same class.
+
+Data sources:
 - `Mush.release.pack` (Mush/ActorDb.release.byml) - 5.5.2
 - Standalone ActorDb files from versions 1.0.0 through 3.1.0
 - Parameter data mined from 274 maps in 5.5.2's `Map.pack` (63,000+ objects)
+- Class hierarchy extracted via RTTI analysis of 3.1.0 binary (516/600 classes confirmed)
+
+Each class entry includes:
+- **parent** — parent class name from IDA-confirmed RTTI hierarchy
+- **params** — typed parameter definitions with defaults
 
 Each actor entry includes:
-- **class** — internal class name (e.g., `Lift`)
-- **res_name** — BFRES model resource name
-- **fmdb_name** — FMDL model name within the BFRES
-- **params** — typed parameter definitions with defaults
-- **link_types** — supported link type connections
+- **class** — class name (references actor_classes.json)
+- **res** — BFRES model resource name
+- **fmdb** — FMDL model name within the BFRES
 
 ### Loading Additional ActorDb Files
 

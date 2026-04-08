@@ -1,0 +1,8336 @@
+{
+	"ActorScheduleExecutorOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"EndSwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"EndSwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"FailureSwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"FailureSwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"IsUseNavigate": {
+				"type": "bool",
+				"default": true
+			},
+			"ScheduleGroupName": {
+				"type": "string",
+				"default": "A"
+			}
+		}
+	},
+	"ActorScheduleFailureDieObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"ActorScheduleLocatorOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"AerialRing": {
+		"parent": "MapObjBase",
+		"params": {
+			"IkuraNum": {
+				"type": "int",
+				"default": 3
+			}
+		}
+	},
+	"AerialRingOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IkuraNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"AirBall": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AirWall": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AllBulletEraserOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AlwaysSpecialSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Type": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"AnimDrivenLift": {
+		"parent": "MapObjBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 0
+			},
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": false
+			},
+			"IsWarpTargetPosBlockL": {
+				"type": "bool",
+				"default": false
+			},
+			"IsWarpTargetPosBlockW": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"AnnounceTimer": {
+		"parent": "MapObjBase",
+		"params": {
+			"DispCoordX": {
+				"type": "float",
+				"default": 0
+			},
+			"DispCoordY": {
+				"type": "float",
+				"default": 135
+			},
+			"DispScale": {
+				"type": "float",
+				"default": 1
+			},
+			"MsgTypeName": {
+				"type": "string",
+				"default": "CloseWaterGate"
+			},
+			"SecondDisplay": {
+				"type": "int",
+				"default": 3
+			},
+			"SecondStart": {
+				"type": "int",
+				"default": 120
+			}
+		}
+	},
+	"AreaGateway": {
+		"parent": "MapObjBase",
+		"params": {
+			"AreaIdx": {
+				"type": "int",
+				"default": 1
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"ArmorSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AtarimeHangedOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AtarimeOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"AtarimeTransceiverOcta": {
+		"parent": "SimpleEventFlowCharacterOcta",
+		"params": {}
+	},
+	"AttachableAirBall": {
+		"parent": "AirBall",
+		"params": {}
+	},
+	"AttachableSprinklerOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AttackPermitNumArea": {
+		"parent": "LocatorBase",
+		"params": {
+			"AttackPermitNum": {
+				"type": "int",
+				"default": 6
+			}
+		}
+	},
+	"AttractTarget": {
+		"parent": "MapObjBase",
+		"params": {
+			"AttractOffest__X": {
+				"type": "float",
+				"default": 0
+			},
+			"AttractOffest__Y": {
+				"type": "float",
+				"default": -25
+			},
+			"AttractOffest__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"AttractTargetOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"AttractOffest__X": {
+				"type": "float",
+				"default": 0
+			},
+			"AttractOffest__Y": {
+				"type": "float",
+				"default": -20
+			},
+			"AttractOffest__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"AttractTargetVersus": {
+		"parent": "MapObjBase",
+		"params": {
+			"AttractOffest__X": {
+				"type": "float",
+				"default": 0
+			},
+			"AttractOffest__Y": {
+				"type": "float",
+				"default": -20
+			},
+			"AttractOffest__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"AutoWarpPoint": {
+		"parent": "MapObjBase",
+		"params": {
+			"DokanWarpCameraYQuick": {
+				"type": "bool",
+				"default": false
+			},
+			"DokanWarpMoveTime": {
+				"type": "int",
+				"default": 0
+			},
+			"IsCheckGrounded": {
+				"type": "bool",
+				"default": true
+			},
+			"IsUseGenerateSE": {
+				"type": "bool",
+				"default": false
+			},
+			"IsPeakYLow": {
+				"type": "bool",
+				"default": true
+			},
+			"JumpCameraName": {
+				"type": "string",
+				"default": "MissionOcta_StageDemo_LastBoss02Goal"
+			}
+		}
+	},
+	"AutoWarpPointNextStageOcta": {
+		"parent": "AutoWarpPoint",
+		"params": {
+			"DstMapUIID": {
+				"type": "int",
+				"default": 89
+			}
+		}
+	},
+	"AutoWarpPointOnline": {
+		"parent": "MapObjBase",
+		"params": {
+			"ActionGuideVssRadius": {
+				"type": "float",
+				"default": 150
+			},
+			"DokanWarpCameraYQuick": {
+				"type": "bool",
+				"default": false
+			},
+			"DokanWarpMoveTime": {
+				"type": "int",
+				"default": 0
+			},
+			"IsCheckGrounded": {
+				"type": "bool",
+				"default": true
+			},
+			"IsUseGenerateSE": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"AutoWarpPointWorld": {
+		"parent": "AutoWarpPoint",
+		"params": {
+			"DestMapFileName": {
+				"type": "string",
+				"default": "Fld_World02_Wld"
+			}
+		}
+	},
+	"BakeryBreadObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BakeryKingBread": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BakeryKingBreadOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Balance": {
+		"parent": "MapObjBase",
+		"params": {
+			"HalfHeight": {
+				"type": "float",
+				"default": 30
+			}
+		}
+	},
+	"BalanceBridge": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BalancePan": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"BaseCampKamabokoOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BaseCampMagazineOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BaseCampNpcLocatorOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"Anim": {
+				"type": "int",
+				"default": 7
+			},
+			"Appear": {
+				"type": "int",
+				"default": 2
+			},
+			"IsFitToGnd": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"BigLaserItemOnline": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"BigLaserItemPedestal": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"BingoCheckerOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BingoClearObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BingoMissDieObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Bird": {
+		"parent": "MapObjBase",
+		"params": {
+			"FlyRotY": {
+				"type": "float",
+				"default": 0
+			},
+			"IsUseFlyRotY": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"BlinkLightOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Blowouts": {
+		"parent": "MapObjBase",
+		"params": {
+			"MaxLength": {
+				"type": "float",
+				"default": 260
+			}
+		}
+	},
+	"BlowoutsOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"MaxLength": {
+				"type": "float",
+				"default": 100
+			}
+		}
+	},
+	"BlowoutsOnline": {
+		"params": {
+			"ColCapsuleOffsetYForEndMuParam": {
+				"type": "float",
+				"default": -2
+			},
+			"ColCapsuleOffsetZForEndMuParam": {
+				"type": "float",
+				"default": -4.5
+			},
+			"ColCapsuleRadiusForEndMuParam": {
+				"type": "float",
+				"default": 5.5
+			},
+			"IsKnockBackOnTouchFillUp": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseMuParamForEnd": {
+				"type": "bool",
+				"default": true
+			},
+			"IsUseMuParamForPlayerKnockBackInWall": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseSpecialCollisionForBury": {
+				"type": "bool",
+				"default": false
+			},
+			"MaxLength": {
+				"type": "float",
+				"default": 380
+			},
+			"PlayerKnockBackInWallMuParam": {
+				"type": "float",
+				"default": 1.2
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"BombFlower": {
+		"parent": "MapObjBase",
+		"params": {
+			"InkHidableParams__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"NoCrossPaint": {
+				"type": "bool",
+				"default": false
+			},
+			"PaintType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"BombFlowerOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"InkHidableParams__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"NoCrossPaint": {
+				"type": "bool",
+				"default": false
+			},
+			"PaintType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"Boss04EnergyCoreOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BreakCounterClearLastBossOcta": {
+		"parent": "BreakCounterClearOcta",
+		"params": {}
+	},
+	"BreakCounterClearOcta": {
+		"parent": "BreakCounterBaseOcta",
+		"params": {
+			"ActorName": {
+				"type": "string",
+				"default": "Enm_TakopterOcta,Enm_TakopterBombOcta,Enm_TakopterMissileOcta,Enm_ChargeOcta,Enm_SpinnerOcta"
+			},
+			"CountNum": {
+				"type": "int",
+				"default": 32
+			},
+			"IsAnnounceLastOne": {
+				"type": "bool",
+				"default": true
+			},
+			"RestCountForCompass": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"BreakCounterDieOcta": {
+		"parent": "BreakCounterBaseOcta",
+		"params": {}
+	},
+	"BunkerVBallOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"ReflectVelVBall": {
+				"type": "float",
+				"default": 5
+			}
+		}
+	},
+	"CameraEffectArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"Text": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"CanBuildMachineOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Candle": {
+		"parent": "DesignerObj",
+		"params": {}
+	},
+	"CardKeyPole": {
+		"parent": "MapObjBase",
+		"params": {
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"CarouselAttraction": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CarouselJetCoaster": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CarouselSignboard": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CentralStaionLockerOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CentralStaionVendingMachineOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CentralStationGlassOcta": {
+		"parent": "SimpleEventFlowCharacterOcta",
+		"params": {}
+	},
+	"CentralStationStartPosOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"Type": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"CentralStationTelephoneOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CentralStationTrainOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CheckPoint": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsLast": {
+				"type": "bool",
+				"default": false
+			},
+			"Progress": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"CheckPointArea": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"CheckPointFirstOcta": {
+		"parent": "CheckPointBaseOcta",
+		"params": {}
+	},
+	"CheckPointForTimeLimitOcta": {
+		"parent": "CheckPointHalfwayOcta",
+		"params": {
+			"AdditionalTimeSec": {
+				"type": "int",
+				"default": 0
+			},
+			"IsAppearWithSwitchOn": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"CheckPointHalfwayOcta": {
+		"parent": "CheckPointBaseOcta",
+		"params": {
+			"IsLast": {
+				"type": "bool",
+				"default": false
+			},
+			"Progress": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"CheckPointOffArea": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CheckPointRailTogglePointOcta": {
+		"parent": "CheckPointHalfwayOcta",
+		"params": {
+			"IsAppearWithSwitchOn": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"CheckPointUIDisplayObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CheckPointVBallOcta": {
+		"parent": "CheckPointHalfwayOcta",
+		"params": {
+			"IsAppearWithSwitchOn": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"Compass": {
+		"parent": "MapObjBase",
+		"params": {
+			"SEType": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"CompassOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"SEType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"ContraflowArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"CheckPos": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"Conveyer": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsDrawGear": {
+				"type": "bool",
+				"default": true
+			},
+			"IsEdgeFall": {
+				"type": "bool",
+				"default": false
+			},
+			"IsNoGear": {
+				"type": "bool",
+				"default": false
+			},
+			"ScrollVelLocalX": {
+				"type": "float",
+				"default": 0
+			},
+			"ScrollVelLocalZ": {
+				"type": "float",
+				"default": 0.7
+			},
+			"SoundSourceGroupIdx": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"CoopAreaKeepOut": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"CoopArrivalPointEnemyBallon": {
+		"parent": "CoopArrivalPointEnemy",
+		"params": {}
+	},
+	"CoopArrivalPointEnemyCup": {
+		"params": {},
+		"parent": "CoopArrivalPointEnemy"
+	},
+	"CoopArrivalPointEnemyRocket": {
+		"params": {},
+		"parent": "CoopArrivalPointEnemy"
+	},
+	"CoopArrivalPointEnemyTower": {
+		"params": {},
+		"parent": "CoopArrivalPointEnemy"
+	},
+	"CoopBindableShield": {
+		"parent": "CoopObject",
+		"params": {}
+	},
+	"CoopCannonBall": {
+		"parent": "CoopObject",
+		"params": {}
+	},
+	"CoopDeathPoint_Boss": {
+		"params": {},
+		"parent": "LocatorBase"
+	},
+	"CoopEnemySakediver": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"CoopEnemySakedozer": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"CoopEnemySakeflyer": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"CoopEnemySakelienBagman": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienBagmanLarge": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienBase": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"CoopEnemySakelienBomber": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienCannon": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienCup": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienCupTwins": {
+		"parent": "CoopEnemySakelienCup",
+		"params": {}
+	},
+	"CoopEnemySakelienEscape": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienGeyser": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienGolden": {
+		"parent": "CoopEnemySakelienStandard",
+		"params": {}
+	},
+	"CoopEnemySakelienLarge": {
+		"parent": "CoopEnemySakelienStandard",
+		"params": {}
+	},
+	"CoopEnemySakelienShield": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienSmall": {
+		"parent": "CoopEnemySakelienStandard",
+		"params": {}
+	},
+	"CoopEnemySakelienSnake": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienStandard": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakelienTower": {
+		"parent": "CoopEnemySakelienBase",
+		"params": {}
+	},
+	"CoopEnemySakepuncher": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"CoopEnemySakepuncherBulletPunch": {
+		"parent": "CoopEnemySakepuncherBullet",
+		"params": {}
+	},
+	"CoopEnemySakepuncherBulletSimpl": {
+		"parent": "CoopEnemySakepuncherBullet",
+		"params": {}
+	},
+	"CoopEnemySakerocket": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"CoopEnemySakerocketBullet": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"CoopGoldenIkura": {
+		"parent": "CoopItem",
+		"params": {}
+	},
+	"CoopGraphArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"CoopGraphCostController_ScrewLift": {
+		"params": {},
+		"parent": "CoopGraphCostController"
+	},
+	"CoopGrave": {
+		"parent": "CoopObject",
+		"params": {}
+	},
+	"CoopIgnoreAreaSpawnBox": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"CoopIkuraBank": {
+		"params": {},
+		"parent": "CoopObject"
+	},
+	"CoopIkuraBankBase": {
+		"params": {},
+		"parent": "CoopObject"
+	},
+	"CoopLimitedArea_EnemyAttack": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"CoopLocator_SpawnBox": {
+		"params": {
+			"AllocatableRadius": {
+				"type": "float",
+				"default": 500
+			}
+		},
+		"parent": "LocatorBase"
+	},
+	"CoopParamHolderEventGeyser": {
+		"params": {
+			"ThDistance_WaterHigh": {
+				"type": "float",
+				"default": 250
+			},
+			"ThDistance_WaterMid": {
+				"type": "float",
+				"default": 400
+			}
+		},
+		"parent": "LocatorBase"
+	},
+	"CoopPointForTutorial": {
+		"params": {
+			"RoleID": {
+				"type": "string",
+				"default": "RareWait"
+			}
+		},
+		"parent": "LocatorBase"
+	},
+	"CoopRoomArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"CoopSeaSurface": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"CoopSeaSurfaceBindObj": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"CoopShakeshipCraneHead": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"CoopSpawnBox": {
+		"parent": "CoopObject",
+		"params": {}
+	},
+	"CoopSpawnGeyser": {
+		"params": {
+			"FlgFarBank": {
+				"type": "bool",
+				"default": false
+			}
+		},
+		"parent": "CoopObject"
+	},
+	"CoopSpawnPointBoss": {
+		"params": {
+			"AppearId": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"parent": "CoopSpawnPoint"
+	},
+	"CoopSpawnPointPortage": {
+		"parent": "CoopSpawnPoint",
+		"params": {}
+	},
+	"CoopSpawnPointRush": {
+		"parent": "CoopSpawnPoint",
+		"params": {}
+	},
+	"CoopSpawnPointTower": {
+		"parent": "CoopSpawnPoint",
+		"params": {}
+	},
+	"CoopSpawnPointZako": {
+		"params": {
+			"AppearId": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"parent": "CoopSpawnPoint"
+	},
+	"CoopSprinkler": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CoopThrowedBomb": {
+		"parent": "CoopObject",
+		"params": {}
+	},
+	"CoopTower": {
+		"parent": "CoopObject",
+		"params": {}
+	},
+	"CoopWagon": {
+		"parent": "CoopObject",
+		"params": {}
+	},
+	"CubeArea": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"CullingArea": {
+		"parent": "LocatorBase",
+		"params": {
+			"AttackPermitNum": {
+				"type": "int",
+				"default": -1
+			},
+			"GroupID": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"DamageConveyorOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsHitPaint": {
+				"type": "bool",
+				"default": false
+			},
+			"IsWarnSE": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"DamageLaserOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DamageObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DamageSuddenDeathObjFootPaintOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DamageSuddenDeathObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DashPanel": {
+		"parent": "MapObjBase",
+		"params": {
+			"CalcSuperBallHoverAltitudeBasedOnStartPosY": {
+				"type": "bool",
+				"default": false
+			},
+			"DashPownerRate": {
+				"type": "float",
+				"default": 0.95
+			}
+		}
+	},
+	"DashPanelVersus": {
+		"params": {
+			"CalcSuperBallHoverAltitudeBasedOnStartPosY": {
+				"type": "bool",
+				"default": false
+			},
+			"DashPownerRate": {
+				"type": "float",
+				"default": 0.95
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"DashRingVBallOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"InnerRadius": {
+				"type": "float",
+				"default": 20
+			},
+			"IsAttractCenter": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"DbgLiftEnumeratorOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DeadAreaVBallOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"DefenceGoalLastBossAreaOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"DefenceGoalLiftOcta": {
+		"parent": "LiftOcta",
+		"params": {}
+	},
+	"DefenceGoalOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"DeliTakoashiAnnounceObj": {
+		"params": {
+			"GateNumber": {
+				"type": "int",
+				"default": 2
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"DeliTakoashiLine": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DemoDuckingObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"FadeIn": {
+				"type": "float",
+				"default": 1
+			},
+			"FadeOut": {
+				"type": "float",
+				"default": 0
+			},
+			"GroupName": {
+				"type": "string",
+				"default": "Ambience_folder"
+			},
+			"Volume": {
+				"type": "float",
+				"default": 0.3
+			}
+		}
+	},
+	"DemoMessageStartObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"StartFrame": {
+				"type": "int",
+				"default": 240
+			}
+		}
+	},
+	"DendenLiftGroupDoor": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"DendenLiftGroupMemberVersus": {
+		"params": {
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"DendenLiftGroupVersus": {
+		"params": {
+			"MoveReturnAcc": {
+				"type": "float",
+				"default": 0.001
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 0
+			},
+			"MoveVel": {
+				"type": "float",
+				"default": 0.3
+			},
+			"MoveVelAcc": {
+				"type": "float",
+				"default": 0.1
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"DendenLiftVersus": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DendenLiftVersus2": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsBlockSuperJumpWorld": {
+				"type": "bool",
+				"default": true
+			},
+			"IsRejectPlayer": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUsingRailAtt": {
+				"type": "bool",
+				"default": false
+			},
+			"MoveReturnAcc": {
+				"type": "float",
+				"default": 0.01
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 0.1
+			},
+			"MoveVel": {
+				"type": "float",
+				"default": 0.3
+			},
+			"MoveVelAcc": {
+				"type": "float",
+				"default": 0.1
+			},
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"DendenLiftVersus2Gate": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DendenLiftVersusSub": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DendenSwitchVersus": {
+		"parent": "MapObjBase",
+		"params": {
+			"UseStageViewDemo": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"DendenSwitchVersus2": {
+		"parent": "MapObjBase",
+		"params": {
+			"UseStageViewDemo": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"DesignerAnimObj": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsRandom": {
+				"type": "bool",
+				"default": false
+			},
+			"AnimName": {
+				"type": "string",
+				"default": ""
+			}
+		}
+	},
+	"DesignerObj": {
+		"parent": "MapObjBase",
+		"params": {
+			"Anim0": {
+				"type": "other",
+				"default": null
+			},
+			"AnimStartFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"ClothAnimFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"CombineRotation": {
+				"type": "bool",
+				"default": false
+			},
+			"DisableDepthShadow": {
+				"type": "bool",
+				"default": true
+			},
+			"FreeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"IsAbleViewFrustumCulling": {
+				"type": "bool",
+				"default": true
+			},
+			"IsAppearAfterClearInWolrd": {
+				"type": "bool",
+				"default": false
+			},
+			"IsBreakableByLargeEnemy": {
+				"type": "bool",
+				"default": false
+			},
+			"IsClearPaintOnWarp": {
+				"type": "bool",
+				"default": false
+			},
+			"IsEnableOverlookFade": {
+				"type": "bool",
+				"default": false
+			},
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": false
+			},
+			"IsOceanBind": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUnableSkipAnimCalc": {
+				"type": "bool",
+				"default": false
+			},
+			"OneTimeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotateFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"OneTimeRotateInterpolationType": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"RepeatOneTimeRotIntervalFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"RespawnReset": {
+				"type": "bool",
+				"default": false
+			},
+			"RotateType": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleTiming": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleType": {
+				"type": "int",
+				"default": 0
+			},
+			"RunOverSubWeapon": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosBlockable": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosCheckWall": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"DesignerObjNoCulling": {
+		"parent": "DesignerObj",
+		"params": {}
+	},
+	"DestroyEnemyArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsReverse": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"Duck": {
+		"parent": "MapObjBase",
+		"params": {
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 140
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 2
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EmitAreaVBallOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"EmitName": {
+				"type": "string",
+				"default": "HallIn"
+			}
+		}
+	},
+	"EnemyBakeryKing": {
+		"parent": "EnemyBossBase",
+		"params": {}
+	},
+	"EnemyBakeryKingOcta": {
+		"parent": "EnemyBossBaseOcta",
+		"params": {}
+	},
+	"EnemyBossWeakPoint": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyBossWeakPointOcta": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyCautionAreaOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"CautionFrame": {
+				"type": "int",
+				"default": 500
+			},
+			"IsDisplayCaution": {
+				"type": "bool",
+				"default": false
+			},
+			"IsInterCommuAlways": {
+				"type": "bool",
+				"default": true
+			},
+			"IsInterCommuFindPlayer": {
+				"type": "bool",
+				"default": true
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"EnemyCharge": {
+		"parent": "EnemyBase",
+		"params": {
+			"CheckInitialLaserCol": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RotPatrole360": {
+				"type": "bool",
+				"default": false
+			},
+			"ViewAngle": {
+				"type": "float",
+				"default": -1
+			}
+		}
+	},
+	"EnemyChargeOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"CheckInitialLaserCol": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUpdateTargetForPlayerLift": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RotPatrole360": {
+				"type": "bool",
+				"default": false
+			},
+			"ViewAngle": {
+				"type": "float",
+				"default": 60
+			}
+		}
+	},
+	"EnemyCleaner": {
+		"parent": "EnemyBase",
+		"params": {
+			"IsCylinderMode": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyCleanerOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"IsCylinderMode": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyEscape": {
+		"parent": "EnemyBase",
+		"params": {
+			"AirBallHangableParams__IsPurgeAirBallWhenOverLimit": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"MaxOffsetToNode": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"EnemyEscapeOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"AirBallHangableParams__IsPurgeAirBallWhenOverLimit": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"MaxOffsetToNode": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"EnemyFlyingHohei": {
+		"parent": "EnemyBase",
+		"params": {
+			"EnemyRailable__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"KillerModeSpeed": {
+				"type": "float",
+				"default": 1.5
+			}
+		}
+	},
+	"EnemyFlyingHoheiMissile": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyFlyingHoheiMissileOcta": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyFlyingHoheiMother": {
+		"parent": "EnemyBase",
+		"params": {
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RollSpeed": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"EnemyFlyingHoheiMotherOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"EnemyRailable__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsContamineNoPreColSplash": {
+				"type": "bool",
+				"default": false
+			},
+			"IsNoLifeSpan": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseSprinkler": {
+				"type": "bool",
+				"default": true
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RollSpeed": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"EnemyFlyingHoheiOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"EnemyRailable__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"KillerModeSpeed": {
+				"type": "float",
+				"default": 2
+			}
+		}
+	},
+	"EnemyHangedKing": {
+		"parent": "EnemyBossBase",
+		"params": {
+			"RailFollowableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"EnemyHangedKingOcta": {
+		"parent": "EnemyBossBaseOcta",
+		"params": {
+			"RailFollowableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"EnemyHohei": {
+		"parent": "EnemyBase",
+		"params": {
+			"AirBallHangableParams__IsPurgeAirBallWhenOverLimit": {
+				"type": "bool",
+				"default": false
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsNotChangeInitMtxWithRail": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyHoheiOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"AirBallHangableParams__IsPurgeAirBallWhenOverLimit": {
+				"type": "bool",
+				"default": false
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsNotChangeInitMtxWithRail": {
+				"type": "bool",
+				"default": true
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyLastKing": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyLastKingPoleBomb": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyLastKingPunch": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyLastKingTakowasa": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyMegaCleaner": {
+		"parent": "EnemyCleaner",
+		"params": {
+			"IsCheckKeepOutE": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"EnemyMegaCleanerOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"IsCheckKeepOutE": {
+				"type": "bool",
+				"default": true
+			},
+			"IsCylinderMode": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyMoveLimitArea": {
+		"parent": "LocatorBase",
+		"params": {
+			"GroupID": {
+				"type": "int",
+				"default": -1
+			}
+		}
+	},
+	"EnemyPackingBall": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyPaintDrone": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyPatroller": {
+		"parent": "EnemyBase",
+		"params": {
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyPatrollerOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"AttackDecayTime": {
+				"type": "int",
+				"default": 60
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsCombineCustomView": {
+				"type": "bool",
+				"default": true
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyRock": {
+		"parent": "EnemyBase",
+		"params": {
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"Speed": {
+				"type": "float",
+				"default": 0.6
+			}
+		}
+	},
+	"EnemyRockOcta": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyRollerKing": {
+		"parent": "EnemyBossBase",
+		"params": {
+			"RailFollowable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"EnemyRollerKingOcta": {
+		"parent": "EnemyBossBaseOcta",
+		"params": {
+			"RailFollowable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"EnemyShinOcta": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemySpinner": {
+		"parent": "EnemyBase",
+		"params": {
+			"CheckInitialLaserCol": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RotPatrole360": {
+				"type": "bool",
+				"default": false
+			},
+			"ViewAngle": {
+				"type": "float",
+				"default": -1
+			}
+		}
+	},
+	"EnemySpinnerOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"CheckInitialLaserCol": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RotPatrole360": {
+				"type": "bool",
+				"default": false
+			},
+			"ViewAngle": {
+				"type": "float",
+				"default": -1
+			}
+		}
+	},
+	"EnemyStamp": {
+		"parent": "EnemyBase",
+		"params": {
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"FirstDirectlyAttack": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyStampKingDeco": {
+		"parent": "EnemyBossBase",
+		"params": {
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"EnemyStampKingDecoOcta": {
+		"parent": "EnemyBossBaseOcta",
+		"params": {
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"EnemyStampOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"ChanceCnt": {
+				"type": "int",
+				"default": 300
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"FacePaint": {
+				"type": "int",
+				"default": 3
+			},
+			"FirstDirectlyAttack": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCaterpiller": {
+				"type": "bool",
+				"default": false
+			},
+			"IsExtendFillFootColBackward": {
+				"type": "bool",
+				"default": false
+			},
+			"IsExtendFillFootColForward": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseFillFootCol": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyTakoDiverAreaType": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTakoGabon": {
+		"parent": "EnemyBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 0
+			},
+			"Interval": {
+				"type": "int",
+				"default": 220
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 20
+			},
+			"SpawnOrder": {
+				"type": "string",
+				"default": "0,0"
+			}
+		}
+	},
+	"EnemyTakoGabonOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 0
+			},
+			"Interval": {
+				"type": "int",
+				"default": 120
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 5
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 2
+			},
+			"SpawnOrder": {
+				"type": "string",
+				"default": "0,0"
+			}
+		}
+	},
+	"EnemyTakodozer": {
+		"parent": "EnemyBase",
+		"params": {
+			"IsIgnoreGravity": {
+				"type": "bool",
+				"default": false
+			},
+			"IsScrap": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyTakodozerOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"IsIgnoreGravity": {
+				"type": "bool",
+				"default": false
+			},
+			"IsScrap": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyTakolienFixed": {
+		"parent": "EnemyBase",
+		"params": {
+			"IsRot": {
+				"type": "bool",
+				"default": true
+			},
+			"IsRotClockwise": {
+				"type": "bool",
+				"default": false
+			},
+			"IsRotPatrol": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSink": {
+				"type": "bool",
+				"default": true
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyTakolienFixedOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"IsRot": {
+				"type": "bool",
+				"default": true
+			},
+			"IsRotClockwise": {
+				"type": "bool",
+				"default": false
+			},
+			"IsRotPatrol": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSink": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyTakolienMovable": {
+		"parent": "EnemyBase",
+		"params": {
+			"AirBallHangableParams__IsPurgeAirBallWhenOverLimit": {
+				"type": "bool",
+				"default": false
+			},
+			"AmbushConstraint": {
+				"type": "int",
+				"default": 2
+			},
+			"AmbushSearchRadius": {
+				"type": "float",
+				"default": 250
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsChaseFixedType": {
+				"type": "bool",
+				"default": false
+			},
+			"IsNotChangeInitMtxWithRail": {
+				"type": "bool",
+				"default": false
+			},
+			"IsPatrolFDFixedType": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyTakolienMovableOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"AirBallHangableParams__IsPurgeAirBallWhenOverLimit": {
+				"type": "bool",
+				"default": false
+			},
+			"AmbushConstraint": {
+				"type": "int",
+				"default": 2
+			},
+			"AmbushSearchRadius": {
+				"type": "float",
+				"default": 250
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsChaseFixedType": {
+				"type": "bool",
+				"default": false
+			},
+			"IsNotChangeInitMtxWithRail": {
+				"type": "bool",
+				"default": false
+			},
+			"IsPatrolFDFixedType": {
+				"type": "bool",
+				"default": false
+			},
+			"IsRailFollowableOneTime": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"EnemyTakopter": {
+		"parent": "EnemyBase",
+		"params": {
+			"AmbushConstraint": {
+				"type": "int",
+				"default": 7
+			},
+			"AmbushSearchRadius": {
+				"type": "float",
+				"default": 250
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"PatrolFrontDirFixed": {
+				"type": "bool",
+				"default": false
+			},
+			"PlayerChaseType": {
+				"type": "int",
+				"default": 0
+			},
+			"UsePaintDrone": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"EnemyTakopterBomb": {
+		"parent": "EnemyTakopter",
+		"params": {
+			"OverwriteAttackBreakTime": {
+				"type": "int",
+				"default": -1
+			}
+		}
+	},
+	"EnemyTakopterBombOcta": {
+		"parent": "EnemyTakopterOcta",
+		"params": {}
+	},
+	"EnemyTakopterForHangedKing": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTakopterForHangedKingOcta": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTakopterMissileOcta": {
+		"parent": "EnemyTakopterOcta",
+		"params": {
+			"NoCulling": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"EnemyTakopterOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"AmbushConstraint": {
+				"type": "int",
+				"default": 7
+			},
+			"AmbushSearchRadius": {
+				"type": "float",
+				"default": 250
+			},
+			"EnemyRailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"PatrolFrontDirFixed": {
+				"type": "bool",
+				"default": false
+			},
+			"PlayerChaseType": {
+				"type": "int",
+				"default": 0
+			},
+			"UsePaintDrone": {
+				"type": "bool",
+				"default": false
+			},
+			"OverwriteAttackBreakTime": {
+				"type": "int",
+				"default": -1
+			}
+		}
+	},
+	"EnergyCoreLiftDemoMoverOcta": {
+		"parent": "SimpleEventFlowCharacterOcta",
+		"params": {}
+	},
+	"EventFlowLocator": {
+		"parent": "LocatorBase",
+		"params": {
+			"LocationName": {
+				"type": "string",
+				"default": "Demo_StartPoint"
+			}
+		}
+	},
+	"ExplanationTextObjLastBossOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"DbgText": {
+				"type": "string",
+				"default": "メガボム風船　胸の赤いポイントに５個投下"
+			},
+			"InDelay": {
+				"type": "int",
+				"default": 60
+			},
+			"IsIgnoreSecondSwitch": {
+				"type": "bool",
+				"default": false
+			},
+			"IsShowIfWeaponA": {
+				"type": "bool",
+				"default": true
+			},
+			"IsShowIfWeaponB": {
+				"type": "bool",
+				"default": true
+			},
+			"IsShowIfWeaponC": {
+				"type": "bool",
+				"default": true
+			},
+			"IsTimer": {
+				"type": "bool",
+				"default": true
+			},
+			"Label": {
+				"type": "string",
+				"default": "Boss_0000"
+			},
+			"PictureId": {
+				"type": "int",
+				"default": -1
+			},
+			"PriorityTypeVal": {
+				"type": "int",
+				"default": 0
+			},
+			"TalkerId": {
+				"type": "int",
+				"default": 1
+			},
+			"Timer": {
+				"type": "int",
+				"default": 300
+			}
+		}
+	},
+	"ExplanationTextObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"DbgText": {
+				"type": "string",
+				"default": "タフでクールでイカしてんな！ 8 号！"
+			},
+			"InDelay": {
+				"type": "int",
+				"default": 0
+			},
+			"IsIgnoreSecondSwitch": {
+				"type": "bool",
+				"default": false
+			},
+			"IsShowIfWeaponA": {
+				"type": "bool",
+				"default": true
+			},
+			"IsShowIfWeaponB": {
+				"type": "bool",
+				"default": true
+			},
+			"IsShowIfWeaponC": {
+				"type": "bool",
+				"default": true
+			},
+			"IsTimer": {
+				"type": "bool",
+				"default": true
+			},
+			"Label": {
+				"type": "string",
+				"default": "ShortRail_0000"
+			},
+			"PictureId": {
+				"type": "int",
+				"default": -1
+			},
+			"TalkerId": {
+				"type": "int",
+				"default": 0
+			},
+			"Timer": {
+				"type": "int",
+				"default": 300
+			}
+		}
+	},
+	"ExplanationTextOutObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Field": {
+		"parent": "Cmn::Actor",
+		"params": {}
+	},
+	"FixedScrewLocator": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"FlyingHoheiLauncher": {
+		"parent": "IntervalSpawnerMulti",
+		"params": {}
+	},
+	"FlyingHoheiLauncherOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 0
+			},
+			"DropIkuraEnemyLimitNum": {
+				"type": "int",
+				"default": 1
+			},
+			"GenerateFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"Interval": {
+				"type": "int",
+				"default": 600
+			},
+			"IsSetSpeedLocalProp": {
+				"type": "bool",
+				"default": true
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 2
+			},
+			"SpawnOrder": {
+				"type": "string",
+				"default": "0,0"
+			}
+		}
+	},
+	"ForceExistGroundUnderArea": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Gachihoko": {
+		"parent": "MapObjBase",
+		"params": {
+			"HikikomoriDetectionRate": {
+				"type": "float",
+				"default": 0.2
+			}
+		}
+	},
+	"GachihokoDangerousArea": {
+		"params": {},
+		"parent": "LocatorBase"
+	},
+	"GachihokoHikikomoriArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"GachihokoHikikomoriArea2": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"GachihokoIgnoreOppositeTeamArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"GachihokoOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"GachihokoReallocateInitPosArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"GachihokoRouteArea": {
+		"parent": "CubeArea",
+		"params": {
+			"IsCalcCurrRouteAreaWithUnsafePos": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"GachihokoSafePos": {
+		"params": {
+			"DissmissWarning": {
+				"type": "bool",
+				"default": false
+			}
+		},
+		"parent": "LocatorBase"
+	},
+	"GachihokoTargetPoint": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"GateManhole": {
+		"parent": "MapObjBase",
+		"params": {
+			"DestWorldMapName": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"GateManholeWorld": {
+		"parent": "GateManhole",
+		"params": {}
+	},
+	"GatewayBoss": {
+		"parent": "GatewayBase",
+		"params": {
+			"BossIdx": {
+				"type": "int",
+				"default": 1
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"GatewayNormal": {
+		"parent": "GatewayBase",
+		"params": {}
+	},
+	"GeneralArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"GeneralLocator": {
+		"parent": "LocatorBase",
+		"params": {
+			"Label": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"GeneralMapTagOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"Tag": {
+				"type": "string",
+				"default": "StartRail"
+			}
+		}
+	},
+	"Geyser": {
+		"parent": "MapObjBase",
+		"params": {
+			"MaxHeight": {
+				"type": "float",
+				"default": 90
+			}
+		}
+	},
+	"GeyserOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"MaxHeight": {
+				"type": "float",
+				"default": 150
+			}
+		}
+	},
+	"GeyserVersus": {
+		"params": {
+			"MaxHeight": {
+				"type": "float",
+				"default": 85
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"Goal": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"GoalKamabokoOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"GoalLastBossKeyOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"BarrierBreakSwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"BarrierBreakSwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseBaseModel": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"GoalOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"BarrierBreakSwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"BarrierBreakSwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseBaseModel": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"GrindRail2": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsAppearBySwitch": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCameraReset": {
+				"type": "bool",
+				"default": false
+			},
+			"IsLightModel": {
+				"type": "bool",
+				"default": true
+			},
+			"IsPreventSuicide": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseBase": {
+				"type": "bool",
+				"default": false
+			},
+			"JumpPermitDist": {
+				"type": "float",
+				"default": -1
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"GrindRailVersus": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsAppearBySwitch": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCameraReset": {
+				"type": "bool",
+				"default": false
+			},
+			"IsLightModel": {
+				"type": "bool",
+				"default": false
+			},
+			"IsPreventSuicide": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseBase": {
+				"type": "bool",
+				"default": false
+			},
+			"JumpPermitDist": {
+				"type": "float",
+				"default": -1
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"HangedKingDemoActor": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"IidaBombLocatorOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"BombCoreDamage": {
+				"type": "int",
+				"default": 50
+			},
+			"BombCoreDamageRadius": {
+				"type": "float",
+				"default": 50
+			},
+			"BombCorePaintRadius": {
+				"type": "float",
+				"default": 160
+			},
+			"CrossPaintRadius": {
+				"type": "float",
+				"default": 160
+			},
+			"CrossPaintRayLength": {
+				"type": "float",
+				"default": 160
+			},
+			"CrossPaintRayRadius": {
+				"type": "float",
+				"default": 2
+			}
+		}
+	},
+	"IidaBombOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"ColorTypeVal": {
+				"type": "int",
+				"default": 2
+			},
+			"NoCrossPaint": {
+				"type": "bool",
+				"default": false
+			},
+			"PaintType": {
+				"type": "int",
+				"default": 0
+			},
+			"SchedulableParams__AppearTime": {
+				"type": "int",
+				"default": 0
+			},
+			"SchedulableParams__DisappearFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"SchedulableParams__Memo1": {
+				"type": "other",
+				"default": null
+			},
+			"SchedulableParams__Memo2": {
+				"type": "other",
+				"default": null
+			},
+			"SchedulableParams__ScheduleName": {
+				"type": "string",
+				"default": "A"
+			},
+			"SchedulableParams__SwitchAppearDelay": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"IidaBombOnline": {
+		"params": {
+			"IsLaunchTiming0": {
+				"type": "bool",
+				"default": false
+			},
+			"IsLaunchTiming1": {
+				"type": "bool",
+				"default": true
+			},
+			"IsLaunchTiming2": {
+				"type": "bool",
+				"default": true
+			},
+			"MaxHp": {
+				"type": "int",
+				"default": 3000
+			},
+			"NoCrossPaint": {
+				"type": "bool",
+				"default": true
+			},
+			"PaintType": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"IidaBombSetPositionOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"IkuraPlacementObj": {
+		"parent": "MapObjBase",
+		"params": {
+			"IkuraNum": {
+				"type": "int",
+				"default": 5
+			},
+			"IsStretch": {
+				"type": "bool",
+				"default": true
+			},
+			"MaxBaseLength": {
+				"type": "float",
+				"default": 36
+			},
+			"MinBaseLength": {
+				"type": "float",
+				"default": 6
+			},
+			"RotateSpeedDegPerSec": {
+				"type": "float",
+				"default": 60
+			},
+			"StopFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"StretchFrame": {
+				"type": "int",
+				"default": 120
+			}
+		}
+	},
+	"IkuraPlacementObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IkuraNum": {
+				"type": "int",
+				"default": 4
+			},
+			"IsStretch": {
+				"type": "bool",
+				"default": false
+			},
+			"MaxBaseLength": {
+				"type": "float",
+				"default": 0.03
+			},
+			"MinBaseLength": {
+				"type": "float",
+				"default": 0.03
+			},
+			"RotateSpeedDegPerSec": {
+				"type": "float",
+				"default": 15
+			},
+			"StopFrame": {
+				"type": "int",
+				"default": 120
+			},
+			"StretchFrame": {
+				"type": "int",
+				"default": 60
+			}
+		}
+	},
+	"IkuraRailingObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"ActorName": {
+				"type": "string",
+				"default": "Obj_SphereOcta"
+			},
+			"IkuraNum": {
+				"type": "int",
+				"default": 6
+			},
+			"IkuraRailingType": {
+				"type": "int",
+				"default": 1
+			},
+			"Margin": {
+				"type": "float",
+				"default": 10
+			},
+			"PosOffset__X": {
+				"type": "float",
+				"default": 0
+			},
+			"PosOffset__Y": {
+				"type": "float",
+				"default": 10
+			},
+			"PosOffset__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"RailOffset": {
+				"type": "float",
+				"default": 10
+			}
+		}
+	},
+	"InformCheckPointObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsDisplay": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"InkBar": {
+		"parent": "MapObjBase",
+		"params": {
+			"DelayFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"DurationFrame": {
+				"type": "int",
+				"default": 300
+			},
+			"IntervalFrame": {
+				"type": "int",
+				"default": 300
+			},
+			"IsDisplayBaseModel": {
+				"type": "int",
+				"default": 0
+			},
+			"IsKeepDuration": {
+				"type": "bool",
+				"default": false
+			},
+			"IsLightType": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSwitchDrivenType": {
+				"type": "bool",
+				"default": true
+			},
+			"Length": {
+				"type": "float",
+				"default": 100
+			},
+			"MovingFrame": {
+				"type": "int",
+				"default": 20
+			},
+			"Radius": {
+				"type": "float",
+				"default": 10
+			}
+		}
+	},
+	"InkBarOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"DelayFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"DurationFrame": {
+				"type": "int",
+				"default": 300
+			},
+			"IntervalFrame": {
+				"type": "int",
+				"default": 300
+			},
+			"IsDisplayBaseModel": {
+				"type": "int",
+				"default": 1
+			},
+			"IsKeepDuration": {
+				"type": "bool",
+				"default": true
+			},
+			"IsLightType": {
+				"type": "bool",
+				"default": true
+			},
+			"IsMovedByPlayer": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSetCameraXluFixBB": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSwitchDrivenType": {
+				"type": "bool",
+				"default": false
+			},
+			"Length": {
+				"type": "float",
+				"default": 200
+			},
+			"MovingFrame": {
+				"type": "int",
+				"default": 20
+			},
+			"Radius": {
+				"type": "float",
+				"default": 10
+			}
+		}
+	},
+	"InkLimitSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"InkLimit": {
+				"type": "float",
+				"default": 0.3
+			}
+		}
+	},
+	"InkPondLiftOcta": {
+		"parent": "LiftOcta",
+		"params": {}
+	},
+	"InkPondOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"InkRail": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsOpened": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"InkRailVersus": {
+		"parent": "MapObjBase",
+		"params": {
+			"Behaviour": {
+				"type": "int",
+				"default": 0
+			},
+			"ConnectionTime_Coop": {
+				"type": "int",
+				"default": 600
+			},
+			"IsAbleToBeCulled": {
+				"type": "bool",
+				"default": false
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"IntervalSpawner": {
+		"parent": "MapObjBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 0
+			},
+			"Interval": {
+				"type": "int",
+				"default": 200
+			},
+			"IsSpawnAtThisPos": {
+				"type": "bool",
+				"default": false
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 6
+			}
+		}
+	},
+	"IntervalSpawnerForEnemyRock": {
+		"parent": "MapObjBase",
+		"params": {
+			"Angle": {
+				"type": "float",
+				"default": 0
+			},
+			"Cycle": {
+				"type": "int",
+				"default": 500
+			},
+			"NormalTimingTable": {
+				"type": "string",
+				"default": "0"
+			},
+			"NormalTimingTable1": {
+				"type": "other",
+				"default": null
+			},
+			"NormalTimingTable2": {
+				"type": "other",
+				"default": null
+			},
+			"PauseTimeAfterKilled": {
+				"type": "int",
+				"default": 0
+			},
+			"RareTimingTable": {
+				"type": "other",
+				"default": null
+			},
+			"RareTimingTable1": {
+				"type": "other",
+				"default": null
+			},
+			"RareTimingTable2": {
+				"type": "other",
+				"default": null
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 6
+			},
+			"Speed": {
+				"type": "float",
+				"default": 2
+			},
+			"TotemIndex": {
+				"type": "int",
+				"default": -1
+			}
+		}
+	},
+	"IntervalSpawnerForEnemyRockOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Angle": {
+				"type": "float",
+				"default": 0
+			},
+			"Cycle": {
+				"type": "int",
+				"default": 300
+			},
+			"IsEasyHitWall": {
+				"type": "bool",
+				"default": true
+			},
+			"NormalTimingTable": {
+				"type": "string",
+				"default": "0,150"
+			},
+			"NormalTimingTable1": {
+				"type": "other",
+				"default": null
+			},
+			"NormalTimingTable2": {
+				"type": "other",
+				"default": null
+			},
+			"PauseTimeAfterKilled": {
+				"type": "int",
+				"default": 0
+			},
+			"RareTimingTable": {
+				"type": "other",
+				"default": null
+			},
+			"RareTimingTable1": {
+				"type": "other",
+				"default": null
+			},
+			"RareTimingTable2": {
+				"type": "other",
+				"default": null
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 1
+			},
+			"Speed": {
+				"type": "float",
+				"default": 1
+			},
+			"TotemIndex": {
+				"type": "int",
+				"default": -1
+			}
+		}
+	},
+	"IntervalSpawnerMulti": {
+		"parent": "MapObjBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 0
+			},
+			"DropIkuraEnemyLimitNum": {
+				"type": "int",
+				"default": 1
+			},
+			"GenerateFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"Interval": {
+				"type": "int",
+				"default": 450
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 10
+			},
+			"SpawnOrder": {
+				"type": "string",
+				"default": "0"
+			}
+		}
+	},
+	"IntervalSpawnerMultiOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 10
+			},
+			"DropIkuraEnemyLimitNum": {
+				"type": "int",
+				"default": 100
+			},
+			"GenerateFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"Interval": {
+				"type": "int",
+				"default": 180
+			},
+			"ReserveNum": {
+				"type": "int",
+				"default": 10
+			},
+			"SpawnOrder": {
+				"type": "string",
+				"default": "1,2,1,2,0,1,2,3,1,0"
+			}
+		}
+	},
+	"ItemAncientDocument": {
+		"parent": "ItemMissionCollectionBase",
+		"params": {}
+	},
+	"ItemArmor": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemArmorOcta": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemCan": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemCanMainSubOcta": {
+		"parent": "ItemCanBaseOcta",
+		"params": {
+			"MainWeaponName": {
+				"type": "string",
+				"default": ""
+			},
+			"SubWeaponName": {
+				"type": "string",
+				"default": ""
+			}
+		}
+	},
+	"ItemCanSpecialOcta": {
+		"parent": "ItemCanBaseOcta",
+		"params": {}
+	},
+	"ItemCardKey": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemCardKeyOcta": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemIkura": {
+		"parent": "ItemIkuraBase",
+		"params": {}
+	},
+	"ItemIkuraBottle": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemIkuraBottleOcta": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemIkuraOcta": {
+		"parent": "ItemIkuraBase",
+		"params": {}
+	},
+	"ItemInkBottleOcta": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemLobTicket": {
+		"parent": "ItemMissionCollectionBase",
+		"params": {}
+	},
+	"ItemWeaponBuffDocument": {
+		"parent": "ItemMissionCollectionBase",
+		"params": {}
+	},
+	"Jerry": {
+		"parent": "MapObjBase",
+		"params": {
+			"Anim0": {
+				"type": "string",
+				"default": null
+			},
+			"AnimStartFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"ClothAnimFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"DisableDepthShadow": {
+				"type": "bool",
+				"default": false
+			},
+			"IsAbleViewFrustumCulling": {
+				"type": "bool",
+				"default": false
+			},
+			"IsEnableOverlookFade": {
+				"type": "bool",
+				"default": false
+			},
+			"IsOceanBind": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUnableSkipAnimCalc": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"JumpFlag": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"JumpPanel": {
+		"parent": "MapObjBase",
+		"params": {
+			"ColorAnimFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"IsAirMoveLong": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"JumpPanelOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"ColorAnimFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"ImpactVBall": {
+				"type": "float",
+				"default": 5
+			},
+			"IsAirMoveLong": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"JumpPanelVersus": {
+		"parent": "MapObjBase",
+		"params": {
+			"ColorAnimFrame": {
+				"type": "int",
+				"default": 2
+			},
+			"ImpactVBall": {
+				"type": "float",
+				"default": 5
+			},
+			"IsAirMoveLong": {
+				"type": "bool",
+				"default": false
+			},
+			"IsJumpYEvenHitAsWall": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"KeyCarryOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"KeyStageRespawnPosLocatorOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"KickWall": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LandingDieCancelAreaOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"LandingDieObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LaserLightObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"LaserMaxLength": {
+				"type": "float",
+				"default": 465
+			}
+		}
+	},
+	"LastBoss04SpEndObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LastBoss05DefenceUIInObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"StartFrame": {
+				"type": "int",
+				"default": 540
+			}
+		}
+	},
+	"LastBossAoriBoss": {
+		"parent": "LastBossIdol"
+	},
+	"LastBossBigNamazu": {
+		"parent": "DemoObjBase",
+		"params": {}
+	},
+	"LastBossEnergyBallOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LastBossHotaru": {
+		"parent": "LastBossIdol"
+	},
+	"LastBossIdol": {
+		"parent": "DemoObjBase",
+		"params": {}
+	},
+	"LastBossIdolTruck": {
+		"parent": "DemoObjBase",
+		"params": {
+			"RailFollowableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"LastBossIdolVehicleOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"RailFollowableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"LastBossImpactBallOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LastBossIslandLift": {
+		"parent": "MapObjBase",
+		"params": {
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"CombineRotation": {
+				"type": "bool",
+				"default": false
+			},
+			"FreeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"IsClearPaintOnWarp": {
+				"type": "bool",
+				"default": false
+			},
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": false
+			},
+			"OneTimeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotateFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"OneTimeRotateInterpolationType": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 480
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"RepeatOneTimeRotIntervalFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"RespawnReset": {
+				"type": "bool",
+				"default": false
+			},
+			"RotateType": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleTiming": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleType": {
+				"type": "int",
+				"default": 0
+			},
+			"RunOverSubWeapon": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosBlockable": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"LastBossKeyOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LastBossStageDirectorObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"DokanWarpStateStartSwitch__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"DokanWarpStateStartSwitch__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"IidaBombDemoStartSwitch__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"IidaBombDemoStartSwitch__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"LastBossStageWeaponSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LastBossStatueOcta": {
+		"parent": "SimpleEventFlowCharacterOcta",
+		"params": {}
+	},
+	"LastFestIdolBVersus": {
+		"parent": "DesignerObj",
+		"params": {}
+	},
+	"LastFestIdolVehicleOnline": {
+		"params": {
+			"RailFollowableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"LastFestInGameDirectorOnline": {
+		"params": {
+			"BigLaserItemSpawnAnnounceFrame": {
+				"type": "int",
+				"default": 7380
+			},
+			"BigLaserItemSpawnFrame": {
+				"type": "int",
+				"default": 7200
+			},
+			"IdolVehicleToDropLocatorFrame": {
+				"type": "int",
+				"default": 5700
+			},
+			"IidaBombLaunchFrame0": {
+				"type": "int",
+				"default": 900
+			},
+			"IidaBombLaunchFrame1": {
+				"type": "int",
+				"default": 4500
+			},
+			"IidaBombLaunchFrame2": {
+				"type": "int",
+				"default": 8100
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"LastKingDamageTakoyaki": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Lift": {
+		"parent": "MapObjBase",
+		"params": {
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"CombineRailAndFreeRotate": {
+				"type": "bool",
+				"default": false
+			},
+			"CombineRotation": {
+				"type": "bool",
+				"default": false
+			},
+			"Dir": {
+				"type": "int",
+				"default": 1
+			},
+			"FreeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"IsAbleToBeCulled": {
+				"type": "bool",
+				"default": false
+			},
+			"IsAlwaysCheckDokanWarpDangerous": {
+				"type": "bool",
+				"default": false
+			},
+			"IsBreakableByLargeEnemy": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCalcVelGndOneMoreLong": {
+				"type": "bool",
+				"default": false
+			},
+			"IsClearPaintOnWarp": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCreateSpecificSLinkUserName": {
+				"type": "bool",
+				"default": false
+			},
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": false
+			},
+			"IsShowLiftAlertDbg": {
+				"type": "bool",
+				"default": false
+			},
+			"LiftAlertPredictFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 0.3
+			},
+			"MoveVel": {
+				"type": "float",
+				"default": 3
+			},
+			"MoveVelChargeFull": {
+				"type": "float",
+				"default": 3
+			},
+			"OneTimeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotateDelay": {
+				"type": "int",
+				"default": 0
+			},
+			"OneTimeRotateFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"OneTimeRotateInterpolationType": {
+				"type": "int",
+				"default": 0
+			},
+			"Propeller": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"RepeatOneTimeRot": {
+				"type": "bool",
+				"default": false
+			},
+			"RepeatOneTimeRotIntervalFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"RespawnReset": {
+				"type": "bool",
+				"default": false
+			},
+			"RotateType": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleTiming": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleType": {
+				"type": "int",
+				"default": 0
+			},
+			"RunOverSubWeapon": {
+				"type": "bool",
+				"default": false
+			},
+			"StageViewDemoAnim": {
+				"type": "other",
+				"default": null
+			},
+			"WarpTargetPosBlockable": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosCheckWall": {
+				"type": "bool",
+				"default": false
+			},
+			"DuplicatePoint": {
+				"type": "int",
+				"default": 0
+			},
+			"ToSuperJumpSafePosBuffer": {
+				"type": "string",
+				"default": ""
+			},
+			"ToLiftDangerousAreaBuffer": {
+				"type": "string",
+				"default": ""
+			},
+			"ToNotPaintableArea": {
+				"type": "string",
+				"default": ""
+			},
+			"ToLiftDemoDecoy": {
+				"type": "string",
+				"default": ""
+			}
+		}
+	},
+	"LiftAlertObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LiftCaviarCan": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LiftDangerousArea": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"LiftDemoDecoyOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"CombineRailAndFreeRotate": {
+				"type": "bool",
+				"default": false
+			},
+			"CombineRotation": {
+				"type": "bool",
+				"default": false
+			},
+			"FreeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"IsAbleToBeCulled": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCalcVelGndOneMoreLong": {
+				"type": "bool",
+				"default": false
+			},
+			"IsClearPaintOnWarp": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCreateSpecificSLinkUserName": {
+				"type": "bool",
+				"default": false
+			},
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSetMtxAtEnd": {
+				"type": "bool",
+				"default": true
+			},
+			"IsShowLiftAlertDbg": {
+				"type": "bool",
+				"default": true
+			},
+			"LiftAlertPredictFrame": {
+				"type": "int",
+				"default": 180
+			},
+			"OneTimeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Z": {
+				"type": "float",
+				"default": 90
+			},
+			"OneTimeRotateDelay": {
+				"type": "int",
+				"default": 220
+			},
+			"OneTimeRotateFrame": {
+				"type": "int",
+				"default": 240
+			},
+			"OneTimeRotateInterpolationType": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"RepeatOneTimeRotIntervalFrame": {
+				"type": "int",
+				"default": 360
+			},
+			"RespawnReset": {
+				"type": "bool",
+				"default": false
+			},
+			"RotateAtEnd__X": {
+				"type": "float",
+				"default": 0
+			},
+			"RotateAtEnd__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"RotateAtEnd__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"RotateType": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleTiming": {
+				"type": "int",
+				"default": 3
+			},
+			"RumbleType": {
+				"type": "int",
+				"default": 3
+			},
+			"RunOverSubWeapon": {
+				"type": "bool",
+				"default": false
+			},
+			"StageViewDemoAnim": {
+				"type": "other",
+				"default": null
+			},
+			"TranslateAtEnd__X": {
+				"type": "float",
+				"default": 500
+			},
+			"TranslateAtEnd__Y": {
+				"type": "float",
+				"default": 100
+			},
+			"TranslateAtEnd__Z": {
+				"type": "float",
+				"default": 100
+			},
+			"WarpTargetPosBlockable": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosCheckWall": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"LiftFreezeObjOcta": {
+		"parent": "LiftOrderObjBaseOcta",
+		"params": {}
+	},
+	"LiftPlatformTrainOcta": {
+		"parent": "LiftOcta",
+		"params": {}
+	},
+	"LiftReverseObjOcta": {
+		"parent": "LiftOrderObjBaseOcta",
+		"params": {}
+	},
+	"LiftReverseOnWarp": {
+		"parent": "Lift",
+		"params": {}
+	},
+	"LiftSilentObjOcta": {
+		"parent": "LiftOrderObjBaseOcta",
+		"params": {}
+	},
+	"LinkDstEnemyKillerOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"LinkDstMapObjKillerOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Memo": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"LocateHeroOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsFixedMtx": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"MapKeepOutAreaOcta": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"MapObjSubwayConductorOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Anim": {
+				"type": "int",
+				"default": 3
+			},
+			"ColorTypeVal": {
+				"type": "int",
+				"default": 5
+			}
+		}
+	},
+	"MassObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"MissilePosition": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"MissilePositionOnline": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"MissionAirBall": {
+		"parent": "AirBall",
+		"params": {
+			"IkuraDropNum": {
+				"type": "int",
+				"default": 0
+			},
+			"InkHidableParams__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"MissionPoisonFog": {
+		"parent": "MissionGimmick",
+		"params": {}
+	},
+	"MissionShieldOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"PlayerApproachDistance": {
+				"type": "float",
+				"default": 100
+			},
+			"RunType": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"MissionSprinkler": {
+		"parent": "MissionGimmick",
+		"params": {}
+	},
+	"MissionSprinklerOcta": {
+		"parent": "MissionGimmickOcta",
+		"params": {
+			"PlayerApproachDistance": {
+				"type": "float",
+				"default": 100
+			},
+			"RunType": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"MultiFloorArea": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"MultiFloorAreaPaintWall": {
+		"parent": "MultiFloorArea",
+		"params": {}
+	},
+	"NavigateAirBall": {
+		"parent": "AirBall",
+		"params": {
+			"DisappearFrame_InWorld": {
+				"type": "int",
+				"default": 300
+			},
+			"IkuraDropNum": {
+				"type": "int",
+				"default": 0
+			},
+			"InkHidableParams__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"IsFinalAirBallShowGuideAlways": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"NoIncreaseRespawnNumSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"NoRespawnResetSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"NotSearchableArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"NpcAmiiboHuman": {
+		"parent": "NpcPlayer",
+		"params": {}
+	},
+	"NpcAmiiboIdolSC": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcAmiiboIdolTC": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcAmiiboSquid": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcBaseCampCollectorOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerAOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerBOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerCOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerDOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerFOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerGOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerJOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"NpcBaseCampPassengerOcta": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcCustomShop": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcCustomShopJr": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcIdolNews": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"NpcIdolOcta": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcJudge": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcPlaza": {
+		"parent": "NpcPlayer",
+		"params": {}
+	},
+	"NpcPlazaJerry": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"NpcSweetsShop": {
+		"parent": "NpcBase",
+		"params": {}
+	},
+	"ObjRespawner": {
+		"parent": "MapObjBase",
+		"params": {
+			"Delay": {
+				"type": "int",
+				"default": 0
+			},
+			"GenerateFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"IsSetIsActivateOnEnter": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"OneShotMissDieObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PaintSwitch": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsOnOnly": {
+				"type": "bool",
+				"default": false
+			},
+			"OffCounter": {
+				"type": "int",
+				"default": 0
+			},
+			"Size": {
+				"type": "int",
+				"default": 1
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"PaintSwitchFreezerOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PaintSwitchOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsPlayTimerSE": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUsePredictAlertOnOff": {
+				"type": "bool",
+				"default": false
+			},
+			"OffCounter": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"PaintSwitchVersus": {
+		"parent": "MapObjBase",
+		"params": {
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseNeutral": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"PaintTargetArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsOutlineOverWall": {
+				"type": "bool",
+				"default": false
+			},
+			"SpecialAutoIncSec": {
+				"type": "int",
+				"default": 40
+			}
+		}
+	},
+	"PaintTargetAreaCylinder": {
+		"parent": "PaintTargetArea",
+		"params": {}
+	},
+	"PaintedAreaBox": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PaintedAreaCylinder": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PaintingLift": {
+		"parent": "MapObjBase",
+		"params": {
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"CheckGndCollision": {
+				"type": "bool",
+				"default": false
+			},
+			"FreeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"GameFrameToStop": {
+				"type": "int",
+				"default": -1
+			},
+			"IsPaintIfStop": {
+				"type": "bool",
+				"default": false
+			},
+			"NoUseRotatePiller": {
+				"type": "bool",
+				"default": false
+			},
+			"PaintRepeatFrame": {
+				"type": "int",
+				"default": 10
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 180
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"SizeX": {
+				"type": "float",
+				"default": 60
+			},
+			"SizeZ": {
+				"type": "float",
+				"default": 30
+			},
+			"UseHeightRange": {
+				"type": "bool",
+				"default": true
+			},
+			"UseStrictNrmCheck": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosBlockable": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"PaintingLiftOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"CheckGndCollision": {
+				"type": "bool",
+				"default": false
+			},
+			"FreeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"GameFrameToStop": {
+				"type": "int",
+				"default": -1
+			},
+			"IsDoublePrecisionGndCol": {
+				"type": "bool",
+				"default": false
+			},
+			"IsPaintIfStop": {
+				"type": "bool",
+				"default": false
+			},
+			"NoUseRotatePiller": {
+				"type": "bool",
+				"default": false
+			},
+			"PaintRepeatFrame": {
+				"type": "int",
+				"default": 10
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"SizeX": {
+				"type": "float",
+				"default": 60
+			},
+			"SizeZ": {
+				"type": "float",
+				"default": 60
+			},
+			"UseHeightRange": {
+				"type": "bool",
+				"default": true
+			},
+			"UseStrictNrmCheck": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosBlockable": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"ParamCameraDemoPlayerLastBoss06Octa": {
+		"parent": "ParamCameraDemoPlayerOcta",
+		"params": {}
+	},
+	"ParamCameraDemoPlayerOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"BgmTriggerFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"BgmTriggerName": {
+				"type": "other",
+				"default": null
+			},
+			"ForceSkippable": {
+				"type": "bool",
+				"default": false
+			},
+			"Frame0": {
+				"type": "int",
+				"default": 320
+			},
+			"Frame1": {
+				"type": "int",
+				"default": 240
+			},
+			"Frame2": {
+				"type": "int",
+				"default": 120
+			},
+			"Frame3": {
+				"type": "int",
+				"default": 120
+			},
+			"IsEndWithDecideButton": {
+				"type": "bool",
+				"default": false
+			},
+			"IsStopEnemy": {
+				"type": "bool",
+				"default": false
+			},
+			"NoSkip": {
+				"type": "bool",
+				"default": false
+			},
+			"ParamCameraName0": {
+				"type": "string",
+				"default": "MissionOcta_StageDemo_BoostMissileTakopter_00"
+			},
+			"ParamCameraName1": {
+				"type": "other",
+				"default": null
+			},
+			"ParamCameraName2": {
+				"type": "other",
+				"default": null
+			},
+			"ParamCameraName3": {
+				"type": "other",
+				"default": null
+			},
+			"StopPlayerMove": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"PatchArea": {
+		"parent": "CubeArea",
+		"params": {
+			"AirResistance": {
+				"type": "bool",
+				"default": false
+			},
+			"ConvexAttachOnWall": {
+				"type": "bool",
+				"default": false
+			},
+			"FloatParam0": {
+				"type": "float",
+				"default": -99
+			},
+			"FloatParam1": {
+				"type": "float",
+				"default": -99
+			},
+			"FloatParam2": {
+				"type": "float",
+				"default": -99
+			},
+			"FloatParam3": {
+				"type": "float",
+				"default": -99
+			},
+			"FloatParam4": {
+				"type": "float",
+				"default": -99
+			},
+			"FloatParam5": {
+				"type": "float",
+				"default": -99
+			},
+			"ForecastCarefully": {
+				"type": "bool",
+				"default": false
+			},
+			"IsGachihokoSquidJamCrank": {
+				"type": "bool",
+				"default": false
+			},
+			"JetpackNoPaintYesGnd": {
+				"type": "bool",
+				"default": false
+			},
+			"JumpFootCheckNoPaintNoGnd": {
+				"type": "bool",
+				"default": false
+			},
+			"KJumpLimitJumpVelStrong": {
+				"type": "bool",
+				"default": false
+			},
+			"LastStandLaxAsLastStand": {
+				"type": "bool",
+				"default": false
+			},
+			"NoAirFall": {
+				"type": "bool",
+				"default": true
+			},
+			"NoConvexAttach": {
+				"type": "bool",
+				"default": false
+			},
+			"StealthForEnemySearchOneMore": {
+				"type": "bool",
+				"default": false
+			},
+			"StepPaintMapPaintableChangerDel": {
+				"type": "bool",
+				"default": false
+			},
+			"SuperBallHoverAltitudeInflate": {
+				"type": "bool",
+				"default": false
+			},
+			"SuperLandingCliffCheckSlope": {
+				"type": "bool",
+				"default": false
+			},
+			"TrapVanish": {
+				"type": "bool",
+				"default": false
+			},
+			"WallPaintCheckOffset": {
+				"type": "bool",
+				"default": false
+			},
+			"WaterCutterReject": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"PlayerMakeLocatorOcta": {
+		"parent": "GeneralLocator",
+		"params": {}
+	},
+	"PlazaActionArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"Action": {
+				"type": "int",
+				"default": 5
+			},
+			"IsEnableEve": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"PlazaAmiiboPackage": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaBigNamazu": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaCoopDoor": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaDeliveryBox": {
+		"parent": "MapObjBase",
+		"params": {
+			"Type": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"PlazaDoor": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsEnableEve": {
+				"type": "bool",
+				"default": true
+			},
+			"SceneName": {
+				"type": "string",
+				"default": "Shop"
+			},
+			"ShopName": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"PlazaFestSignboard": {
+		"parent": "MapObjBase",
+		"params": {
+			"BeingHeldDay": {
+				"type": "int",
+				"default": -1
+			},
+			"Day": {
+				"type": "int",
+				"default": -1
+			},
+			"IsSAI": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"PlazaFestStage": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaFestVote": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaFireworks": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaFireworksArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"IntervalMax": {
+				"type": "int",
+				"default": 240
+			},
+			"IntervalMin": {
+				"type": "int",
+				"default": 30
+			},
+			"Kind": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"PlazaHotaru": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaIdolNoticeArea": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaJerryLocator": {
+		"parent": "LocatorBase",
+		"params": {
+			"Appear": {
+				"type": "int",
+				"default": 2
+			},
+			"FixedClothIdx": {
+				"type": "int",
+				"default": -1
+			},
+			"IsFitToGnd": {
+				"type": "bool",
+				"default": false
+			},
+			"IsTankTop": {
+				"type": "bool",
+				"default": false
+			},
+			"Movement": {
+				"type": "int",
+				"default": 0
+			},
+			"NewsAppear": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"PlazaLobbyTv": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaNewsFurniture": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaNewsMonitor": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaNpcLocator": {
+		"parent": "LocatorBase",
+		"params": {
+			"Appear": {
+				"type": "int",
+				"default": 0
+			},
+			"IsFitToGnd": {
+				"type": "bool",
+				"default": false
+			},
+			"Match": {
+				"type": "int",
+				"default": 0
+			},
+			"Movement": {
+				"type": "int",
+				"default": 1
+			},
+			"NewsOffset__X": {
+				"type": "float",
+				"default": 0
+			},
+			"NewsOffset__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"NewsOffset__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"NewsRotY": {
+				"type": "float",
+				"default": 0
+			},
+			"TalkBaseDir": {
+				"type": "float",
+				"default": 0
+			},
+			"TalkDirRange": {
+				"type": "float",
+				"default": 360
+			},
+			"TalkExclusionDirRange": {
+				"type": "float",
+				"default": 0
+			},
+			"UseNewsOffset": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"PlazaNpcRandomArea": {
+		"parent": "CubeArea",
+		"params": {
+			"ColCheckY": {
+				"type": "float",
+				"default": 10
+			}
+		}
+	},
+	"PlazaSpeakerMain": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaSpeakerSub": {
+		"parent": "MapObjBase",
+		"params": {
+			"XLinkUserName": {
+				"type": "string",
+				"default": "Obj_PlazaSpeakerSub00"
+			}
+		}
+	},
+	"PlazaTrain": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PlazaTv": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PressureArea": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PressureDoor": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PsylliumRespawner": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PsylliumRespawnerOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"PsylliumRespawnerOnline": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"PutOnBlockChangeCalcArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"NotDamageMoveCollision": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"RailEffectObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"RailEffectObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"RailOperateObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Acc": {
+				"type": "float",
+				"default": 2
+			},
+			"Dec": {
+				"type": "float",
+				"default": 2
+			},
+			"MaxSpeed": {
+				"type": "float",
+				"default": 2
+			},
+			"RailFollowableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"RailStepForwardPointOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsSaveAtCheckPoint": {
+				"type": "bool",
+				"default": false
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 120
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 2
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"RailTogglePoint": {
+		"parent": "MapObjBase",
+		"params": {
+			"AccOff": {
+				"type": "float",
+				"default": 0.05
+			},
+			"AccOn": {
+				"type": "float",
+				"default": 0.05
+			},
+			"DetectPlayerIsNearDistanceXZ": {
+				"type": "float",
+				"default": 100
+			},
+			"IsFollowRailPointRotate": {
+				"type": "bool",
+				"default": false
+			},
+			"IsFollowRailRotate": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSwitchStopSmooth": {
+				"type": "bool",
+				"default": true
+			},
+			"OutAreaSpeedRate": {
+				"type": "float",
+				"default": 1
+			},
+			"QuakeAmplitudeCoef": {
+				"type": "float",
+				"default": 2
+			},
+			"QuakeDecrement": {
+				"type": "float",
+				"default": 0.2
+			},
+			"QuakeFrequency": {
+				"type": "float",
+				"default": 0.5
+			},
+			"RailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"SpeedOff": {
+				"type": "float",
+				"default": 0.175
+			},
+			"SpeedOn": {
+				"type": "float",
+				"default": 1.5
+			},
+			"SwitchStopFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"SwitchStopRegist": {
+				"type": "float",
+				"default": 0.05
+			}
+		}
+	},
+	"RailTogglePointOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"AccOff": {
+				"type": "float",
+				"default": 0.01
+			},
+			"AccOn": {
+				"type": "float",
+				"default": 0.05
+			},
+			"DetectPlayerIsNearDistanceXZ": {
+				"type": "float",
+				"default": 100
+			},
+			"IsFollowRailPointRotate": {
+				"type": "bool",
+				"default": true
+			},
+			"IsFollowRailRotate": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSwitchStopSmooth": {
+				"type": "bool",
+				"default": true
+			},
+			"OutAreaSpeedRate": {
+				"type": "float",
+				"default": 1
+			},
+			"QuakeAmplitudeCoef": {
+				"type": "float",
+				"default": 1
+			},
+			"QuakeDecrement": {
+				"type": "float",
+				"default": 0.2
+			},
+			"QuakeFrequency": {
+				"type": "float",
+				"default": 0.5
+			},
+			"RailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"SpeedOff": {
+				"type": "float",
+				"default": 0.2
+			},
+			"SpeedOn": {
+				"type": "float",
+				"default": 1
+			},
+			"SwitchStopFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"SwitchStopRegist": {
+				"type": "float",
+				"default": 0.05
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"TerminateAtTerminal": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"RailableStopArea": {
+		"parent": "LocatorBase",
+		"params": {
+			"BreakFrame": {
+				"type": "int",
+				"default": 90
+			}
+		}
+	},
+	"ReactToEnemyObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"RespawnNumSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Infinity": {
+				"type": "bool",
+				"default": false
+			},
+			"RespawnNum": {
+				"type": "int",
+				"default": 5
+			}
+		}
+	},
+	"RespawnPoint": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"RespawnPosVBallOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"RivalAppearArea": {
+		"parent": "Obj",
+		"params": {
+			"AppearNum": {
+				"type": "int",
+				"default": 1
+			},
+			"DbgWeaponMainId": {
+				"type": "int",
+				"default": -1
+			},
+			"DbgWeaponSubId": {
+				"type": "int",
+				"default": -1
+			},
+			"DbgWeaponTrigFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"HeightLimitDown": {
+				"type": "float",
+				"default": -150
+			},
+			"HeightLimitUp": {
+				"type": "float",
+				"default": 150
+			},
+			"IsKeepout": {
+				"type": "bool",
+				"default": false
+			},
+			"ParameterName": {
+				"type": "other",
+				"default": null
+			},
+			"PlanType": {
+				"type": "int",
+				"default": 0
+			},
+			"RespawnNum": {
+				"type": "int",
+				"default": 0
+			},
+			"SquadActorName": {
+				"type": "string",
+				"default": "Enm_RivalBlaster"
+			}
+		}
+	},
+	"RivalAppearAreaOcta": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"RivalAppearLimitSetterOcta": {
+		"parent": "Obj",
+		"params": {
+			"LimitNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"RivalAppearPos": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"RivalDemoVictoryHeroOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"RivalHeroAreaOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"RivalMoveLimitAreaBoxOcta": {
+		"parent": "RivalMoveLimitAreaBase",
+		"params": {}
+	},
+	"RivalMoveLimitAreaCylinderOcta": {
+		"parent": "RivalMoveLimitAreaBase",
+		"params": {}
+	},
+	"RivalRespawnPos": {
+		"params": {},
+		"parent": "LocatorBase"
+	},
+	"RivalShotToPlayerInDemoStarterOcta": {
+		"parent": "Obj",
+		"params": {
+			"StartFrame": {
+				"type": "int",
+				"default": 490
+			}
+		}
+	},
+	"RivalSpecialStarterOcta": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"RivalSquad": {
+		"parent": "Obj",
+		"params": {
+			"DbgWeaponMainId": {
+				"type": "int",
+				"default": -1
+			},
+			"DbgWeaponSubId": {
+				"type": "int",
+				"default": -1
+			},
+			"DbgWeaponTrigFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"IsDistanceSwitch": {
+				"type": "bool",
+				"default": true
+			},
+			"IsHiddenWait": {
+				"type": "bool",
+				"default": false
+			},
+			"IsKeepout": {
+				"type": "bool",
+				"default": false
+			},
+			"IsShotSwitch": {
+				"type": "bool",
+				"default": true
+			},
+			"IsSleepWait": {
+				"type": "bool",
+				"default": true
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"ParameterName": {
+				"type": "other",
+				"default": null
+			},
+			"PlanType": {
+				"type": "int",
+				"default": 0
+			},
+			"RespawnNum": {
+				"type": "int",
+				"default": 0
+			},
+			"SpawnType": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchType": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"RivalSquadOcta": {
+		"parent": "Obj",
+		"params": {
+			"DbgWeaponMainId": {
+				"type": "int",
+				"default": -1
+			},
+			"DbgWeaponSubId": {
+				"type": "int",
+				"default": -1
+			},
+			"DbgWeaponTrigFrame": {
+				"type": "int",
+				"default": -1
+			},
+			"EscapeRestHpBorder": {
+				"type": "int",
+				"default": 100
+			},
+			"HeroDeadType": {
+				"type": "int",
+				"default": 0
+			},
+			"HeroWeaponLv": {
+				"type": "int",
+				"default": 0
+			},
+			"IsDistanceSwitch": {
+				"type": "bool",
+				"default": true
+			},
+			"IsHiddenWait": {
+				"type": "bool",
+				"default": false
+			},
+			"IsHokoSwitch": {
+				"type": "bool",
+				"default": false
+			},
+			"IsKeepout": {
+				"type": "bool",
+				"default": false
+			},
+			"IsShotSwitch": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSleepWait": {
+				"type": "bool",
+				"default": true
+			},
+			"IsStrongHero": {
+				"type": "bool",
+				"default": false
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"ParameterName": {
+				"type": "other",
+				"default": null
+			},
+			"PlanType": {
+				"type": "int",
+				"default": 0
+			},
+			"RespawnNum": {
+				"type": "int",
+				"default": 0
+			},
+			"RespawnWaitFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"SpawnType": {
+				"type": "int",
+				"default": 0
+			},
+			"Special": {
+				"type": "int",
+				"default": 3
+			},
+			"SpecialChargeFrame": {
+				"type": "int",
+				"default": 960
+			},
+			"SpecialReChargeFrame": {
+				"type": "int",
+				"default": 1200
+			},
+			"SubWeapon": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchType": {
+				"type": "int",
+				"default": 1
+			},
+			"UseSuperLandingInSuperJump": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"RogPoint": {
+		"parent": "MapObjBase",
+		"params": {
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"RogPointOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"LaserMaxLength": {
+				"type": "float",
+				"default": 120
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseLaserColCheck": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"RollingBarrel": {
+		"parent": "MapObjBase",
+		"params": {
+			"DefaultTeam": {
+				"type": "int",
+				"default": 1
+			},
+			"IsStableFirst": {
+				"type": "bool",
+				"default": true
+			},
+			"MaxSpeedInAlpha": {
+				"type": "float",
+				"default": 8
+			},
+			"MaxSpeedInBravo": {
+				"type": "float",
+				"default": 2
+			}
+		}
+	},
+	"RollingBarrelOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"DefaultTeam": {
+				"type": "int",
+				"default": 1
+			},
+			"IsStableFirst": {
+				"type": "bool",
+				"default": false
+			},
+			"MaxSpeedInAlpha": {
+				"type": "float",
+				"default": 8
+			},
+			"MaxSpeedInBravo": {
+				"type": "float",
+				"default": 2
+			}
+		}
+	},
+	"RollingBarrelOnline": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"RotateGimmick": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"RotateTogglePoint": {
+		"parent": "MapObjBase",
+		"params": {
+			"AccelDecr": {
+				"type": "float",
+				"default": 0.011
+			},
+			"AccelIncr": {
+				"type": "float",
+				"default": 0.02
+			},
+			"DegFixed": {
+				"type": "float",
+				"default": -1
+			},
+			"DegStopLcm": {
+				"type": "int",
+				"default": 90
+			},
+			"RotSpeedMax": {
+				"type": "float",
+				"default": 0.5
+			},
+			"UseUniqueXLinkUser": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"SceneTransitionWalkTargetPosOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"PlayerMoveSpeedRatio": {
+				"type": "float",
+				"default": 0.75
+			},
+			"PlayerReachRadius": {
+				"type": "float",
+				"default": 2
+			}
+		}
+	},
+	"ScrewLift": {
+		"parent": "MapObjBase",
+		"params": {
+			"Dir": {
+				"type": "int",
+				"default": 0
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 1
+			},
+			"MoveVel": {
+				"type": "float",
+				"default": 3
+			},
+			"MoveVelChargeFull": {
+				"type": "float",
+				"default": 3
+			},
+			"Propeller": {
+				"type": "int",
+				"default": 0
+			},
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"ScrewLiftGearOnline": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"ScrewLiftOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Dir": {
+				"type": "int",
+				"default": 0
+			},
+			"MoveAcc": {
+				"type": "float",
+				"default": 0.9
+			},
+			"MoveReturnAcc": {
+				"type": "float",
+				"default": 0.02
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 0.25
+			},
+			"MoveVel": {
+				"type": "float",
+				"default": 5
+			},
+			"MoveVelChargeFull": {
+				"type": "float",
+				"default": 3
+			},
+			"Propeller": {
+				"type": "int",
+				"default": 1
+			},
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"ScrewLiftOnline": {
+		"parent": "MapObjBase",
+		"params": {
+			"Dir": {
+				"type": "int",
+				"default": 0
+			},
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": false
+			},
+			"IsWeakRejectXYZ": {
+				"type": "bool",
+				"default": true
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 2
+			},
+			"MoveVel": {
+				"type": "float",
+				"default": 0.3
+			},
+			"MoveVelChargeFull": {
+				"type": "float",
+				"default": 0.3
+			},
+			"RailFollowableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"WaitFrameEndRail": {
+				"type": "int",
+				"default": 60
+			}
+		}
+	},
+	"SeaSurfaceVersus": {
+		"params": {
+			"DelayToChangeMinimap": {
+				"type": "int",
+				"default": 500
+			},
+			"DelayToMove": {
+				"type": "int",
+				"default": 300
+			},
+			"DelayToPlayPreSE": {
+				"type": "int",
+				"default": 0
+			},
+			"DelayToPlaySE": {
+				"type": "int",
+				"default": 300
+			},
+			"DelayToShowUI": {
+				"type": "int",
+				"default": 300
+			},
+			"OceanOffsetY": {
+				"type": "float",
+				"default": 74
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 300
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"WaitFrm": {
+				"type": "int",
+				"default": 5100
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"SearchableArea": {
+		"parent": "CubeArea",
+		"params": {
+			"GroupID": {
+				"type": "int",
+				"default": -1
+			}
+		}
+	},
+	"SequenceEventAreaOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"SequentialFollowObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"ChangeFolloweeFrame": {
+				"type": "int",
+				"default": 180
+			},
+			"ChangeType": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"SequentialSwitchOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"SwitchableParams0__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams0__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams1__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams1__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams2__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams2__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams3__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams3__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams4__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams4__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams5__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams5__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams6__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams6__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams7__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams7__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"ShelterDummyBox": {
+		"parent": "ShelterDummyBase",
+		"params": {}
+	},
+	"ShelterDummyCylinder": {
+		"parent": "ShelterDummyBase",
+		"params": {}
+	},
+	"Shield": {
+		"parent": "MapObjBase",
+		"params": {
+			"PlayerApproachDistance": {
+				"type": "float",
+				"default": 100
+			},
+			"RunType": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"ShockAbsorberOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"ShootingAirBallOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"FlyAwayTime": {
+				"type": "int",
+				"default": 240
+			},
+			"IkuraDropNum": {
+				"type": "int",
+				"default": 0
+			},
+			"InkHidableParams__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 225
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 15
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"SchedulableParams__AppearTime": {
+				"type": "int",
+				"default": 0
+			},
+			"SchedulableParams__DisappearFrame": {
+				"type": "int",
+				"default": 480
+			},
+			"SchedulableParams__Memo1": {
+				"type": "string",
+				"default": "B2"
+			},
+			"SchedulableParams__Memo2": {
+				"type": "string",
+				"default": "レール逃げ"
+			},
+			"SchedulableParams__ScheduleName": {
+				"type": "string",
+				"default": "B"
+			},
+			"SchedulableParams__SwitchAppearDelay": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"ShootingUFOOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"ShotToy": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SighterTarget": {
+		"parent": "MapObjBase",
+		"params": {
+			"BrakeAcc": {
+				"type": "float",
+				"default": -0.1
+			},
+			"MoveAcc": {
+				"type": "float",
+				"default": 0.1
+			},
+			"MoveSpeed": {
+				"type": "float",
+				"default": 1
+			},
+			"StopFrame": {
+				"type": "int",
+				"default": 30
+			}
+		}
+	},
+	"SimpleEventFlowCharacterOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SketchAgent3Octa": {
+		"parent": "SimpleEventFlowCharacterOcta",
+		"params": {}
+	},
+	"SoundArea": {
+		"parent": "MapObjBase",
+		"params": {
+			"XLinkUserName": {
+				"type": "string",
+				"default": "SoundArea_Kawa"
+			}
+		}
+	},
+	"SoundAreaOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"UnitIndex": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"SoundDestroyAreaOcta": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"SoundEventAreaOcta": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"SpecialFestObj": {
+		"params": {
+			"SpecialFest": {
+				"type": "int",
+				"default": 2
+			}
+		},
+		"parent": "MapObjBase"
+	},
+	"SpectatorCameraBoundingArea": {
+		"parent": "CubeArea",
+		"params": {
+			"IsRoot": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"SphereRejectPOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SplittableAirBall": {
+		"parent": "MapObjBase",
+		"params": {
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"Sponge": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsCalcChargeBulletSpecialCol": {
+				"type": "bool",
+				"default": false
+			},
+			"IsDefaultMax": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSteepPaint": {
+				"type": "bool",
+				"default": false
+			},
+			"Reject": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"SpongeOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"DisableDepthShadow": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCalcChargeBulletSpecialCol": {
+				"type": "bool",
+				"default": false
+			},
+			"IsDefaultMax": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSteepPaint": {
+				"type": "bool",
+				"default": false
+			},
+			"Reject": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"SpongeVersus": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsCalcChargeBulletSpecialCol": {
+				"type": "bool",
+				"default": false
+			},
+			"IsDefaultMax": {
+				"type": "bool",
+				"default": false
+			},
+			"IsPaintGnd": {
+				"type": "bool",
+				"default": true
+			},
+			"IsSteepPaint": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseScaleDamageForMaxMu": {
+				"type": "bool",
+				"default": true
+			},
+			"IsUseScaleMaxMu": {
+				"type": "bool",
+				"default": true
+			},
+			"IsWeakReject": {
+				"type": "bool",
+				"default": false
+			},
+			"Reject": {
+				"type": "int",
+				"default": 2
+			},
+			"ScaleDamageForMaxMu": {
+				"type": "int",
+				"default": 9000
+			},
+			"Scale_Max_Mu": {
+				"type": "float",
+				"default": 4.5
+			},
+			"Type": {
+				"type": "int",
+				"default": 5
+			}
+		}
+	},
+	"Sprinkler": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"StaffRollBlock": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"StageEntryJumpLocatorOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"DokanWarpMoveTime": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"StageSwitchFlagChecker": {
+		"parent": "MapObjBase",
+		"params": {
+			"FlagName": {
+				"type": "string",
+				"default": "Stop"
+			},
+			"Type": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"StageSwitchFlagSetter": {
+		"parent": "MapObjBase",
+		"params": {
+			"FlagName": {
+				"type": "string",
+				"default": "Stop"
+			},
+			"IgnoreSwitchOffWarning": {
+				"type": "bool",
+				"default": false
+			},
+			"IsRespawnReset": {
+				"type": "bool",
+				"default": false
+			},
+			"SetOn": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"StartPos": {
+		"parent": "LocatorBase",
+		"params": {
+			"InTeamIndex": {
+				"type": "int",
+				"default": 0
+			},
+			"Label": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"StationPlatformOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"StepSwitchOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsToggle": {
+				"type": "bool",
+				"default": false
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"StreamingObj": {
+		"parent": "MapObjBase",
+		"params": {
+			"GroupName": {
+				"type": "string",
+				"default": "Nakasu"
+			},
+			"StreamBufferSizeMiB": {
+				"type": "int",
+				"default": 10
+			}
+		}
+	},
+	"SubwayConductorLocatorOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"Label": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"SubwayConductorOcta": {
+		"parent": "NpcBaseCampPassengerOcta",
+		"params": {}
+	},
+	"SuperJumpDangerousArea": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SuperJumpSafePos": {
+		"parent": "LocatorBase",
+		"params": {
+			"DissmissWarning": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"SupplyPointOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SwitchAllDead": {
+		"parent": "SwitchBase",
+		"params": {
+			"IsOnlyPlayerKill": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"SwitchAnd": {
+		"parent": "SwitchBase",
+		"params": {
+			"IsOnOnly": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"SwitchArea": {
+		"parent": "SwitchAreaBase",
+		"params": {}
+	},
+	"SwitchAreaForObjOcta": {
+		"parent": "SwitchAreaBase",
+		"params": {
+			"ExitMargin__X": {
+				"type": "float",
+				"default": 0
+			},
+			"ExitMargin__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"ExitMargin__Z": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"SwitchAreaOcta": {
+		"parent": "SwitchAreaBase",
+		"params": {
+			"ExitMargin__X": {
+				"type": "float",
+				"default": 0
+			},
+			"ExitMargin__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"ExitMargin__Z": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"SwitchAreaPlayerAction": {
+		"parent": "SwitchBase",
+		"params": {
+			"IsArmorBreak": {
+				"type": "bool",
+				"default": false
+			},
+			"IsArmorBreak_Lv0": {
+				"type": "bool",
+				"default": false
+			},
+			"IsArmorRestore": {
+				"type": "bool",
+				"default": false
+			},
+			"IsArmorRestore_Lv0": {
+				"type": "bool",
+				"default": false
+			},
+			"IsChargerChargeFull": {
+				"type": "bool",
+				"default": false
+			},
+			"IsChargerKeepCharge": {
+				"type": "bool",
+				"default": false
+			},
+			"IsRillerSwingAerial": {
+				"type": "bool",
+				"default": true
+			},
+			"IsShootUmbrellaCanopy": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSideStep": {
+				"type": "bool",
+				"default": true
+			},
+			"IsSpinnerChargeFull": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUmbrellaOpen": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"SwitchAreaPlayerActionOcta": {
+		"parent": "SwitchBase",
+		"params": {
+			"AdditionalIkuraNum": {
+				"type": "int",
+				"default": 50
+			},
+			"IsArmorBreak": {
+				"type": "bool",
+				"default": false
+			},
+			"IsArmorBreak_Lv0": {
+				"type": "bool",
+				"default": false
+			},
+			"IsArmorRestore": {
+				"type": "bool",
+				"default": false
+			},
+			"IsArmorRestore_Lv0": {
+				"type": "bool",
+				"default": false
+			},
+			"IsChargerChargeFull": {
+				"type": "bool",
+				"default": false
+			},
+			"IsChargerKeepCharge": {
+				"type": "bool",
+				"default": false
+			},
+			"IsNotOnVictoryLift": {
+				"type": "bool",
+				"default": false
+			},
+			"IsNotVGoal": {
+				"type": "bool",
+				"default": false
+			},
+			"IsOnVictoryLift": {
+				"type": "bool",
+				"default": false
+			},
+			"IsRespawn": {
+				"type": "bool",
+				"default": false
+			},
+			"IsRillerSwingAerial": {
+				"type": "bool",
+				"default": false
+			},
+			"IsShootUmbrellaCanopy": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSideStep": {
+				"type": "bool",
+				"default": false
+			},
+			"IsSpinnerChargeFull": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUmbrellaOpen": {
+				"type": "bool",
+				"default": false
+			},
+			"IsVGoal": {
+				"type": "bool",
+				"default": false
+			},
+			"ReturnTimer": {
+				"type": "int",
+				"default": 120
+			},
+			"ReturnTypeVal": {
+				"type": "int",
+				"default": 0
+			},
+			"Trig": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"SwitchAreaPole": {
+		"parent": "SwitchAreaBase",
+		"params": {}
+	},
+	"SwitchAreaVBall": {
+		"parent": "SwitchAreaBase",
+		"params": {}
+	},
+	"SwitchBgmDemoEventOcta": {
+		"parent": "SwitchBase",
+		"params": {}
+	},
+	"SwitchComboArea": {
+		"parent": "SwitchBase",
+		"params": {
+			"ComboNum": {
+				"type": "int",
+				"default": 8
+			},
+			"ComboTime": {
+				"type": "int",
+				"default": 180
+			},
+			"IsIncludeWoodenBoxAndAirBall": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"SwitchComboAreaOcta": {
+		"parent": "SwitchBase",
+		"params": {
+			"CheckActorName_0": {
+				"type": "string",
+				"default": "Obj_Box00LHard_VBallOcta"
+			},
+			"CheckActorName_1": {
+				"type": "other",
+				"default": null
+			},
+			"CheckActorName_2": {
+				"type": "other",
+				"default": null
+			},
+			"CheckEnemy": {
+				"type": "bool",
+				"default": false
+			},
+			"ComboNum": {
+				"type": "int",
+				"default": 9
+			},
+			"ComboTime": {
+				"type": "int",
+				"default": -1
+			},
+			"IsIncludeWoodenBoxAndAirBall": {
+				"type": "bool",
+				"default": false
+			},
+			"IsOnlyCountDead": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"SwitchDemoPlayer": {
+		"parent": "SwitchBase",
+		"params": {
+			"DemoSkipIdx": {
+				"type": "int",
+				"default": 0
+			},
+			"UseCamera0": {
+				"type": "bool",
+				"default": true
+			},
+			"UseCamera1": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"SwitchDemoPlayerOcta": {
+		"parent": "SwitchBase",
+		"params": {
+			"DemoSkipIdx": {
+				"type": "int",
+				"default": 0
+			},
+			"FrameToEnd": {
+				"type": "int",
+				"default": 330
+			},
+			"ReuseRespawnReset": {
+				"type": "bool",
+				"default": false
+			},
+			"UseCamera0": {
+				"type": "bool",
+				"default": true
+			},
+			"UseCamera1": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"SwitchEndDemoOcta": {
+		"parent": "SwitchBase",
+		"params": {}
+	},
+	"SwitchExplanationText": {
+		"parent": "SwitchBase",
+		"params": {
+			"DbgText": {
+				"type": "string",
+				"default": "cDontClimb0"
+			},
+			"IsRequestWeaponOnly": {
+				"type": "bool",
+				"default": false
+			},
+			"IsTimer": {
+				"type": "bool",
+				"default": true
+			},
+			"Label": {
+				"type": "string",
+				"default": "B1_GelidiumKing_A1001"
+			},
+			"PictureId": {
+				"type": "int",
+				"default": -1
+			},
+			"TalkerId": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"SwitchGameFrame": {
+		"parent": "SwitchBase",
+		"params": {
+			"GameFrame": {
+				"type": "int",
+				"default": 300
+			}
+		}
+	},
+	"SwitchLinkDstKiller": {
+		"parent": "SwitchBase",
+		"params": {}
+	},
+	"SwitchNot": {
+		"parent": "SwitchBase",
+		"params": {}
+	},
+	"SwitchProgressiveOcta": {
+		"parent": "SwitchBase",
+		"params": {}
+	},
+	"SwitchRingVBallOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"SwitchSequence": {
+		"parent": "SwitchBase",
+		"params": {
+			"InformSameState": {
+				"type": "bool",
+				"default": false
+			},
+			"Name": {
+				"type": "string",
+				"default": "cDontClimb0"
+			}
+		}
+	},
+	"SwitchSequenceHeroOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"UseAquaBallAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseAquaBallAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseAquaBallFirstParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseAquaBallFirstParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseEnableAquaBallAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseEnableAquaBallAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseEnableLauncherAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseEnableLauncherAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseEnableSuperLandingAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseEnableSuperLandingAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseEnableWaterCutterAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseEnableWaterCutterAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseLauncherAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseLauncherAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseLauncherFirstParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseLauncherFirstParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseSuperLandingAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseSuperLandingAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseSuperLandingFirstParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseSuperLandingFirstParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseWaterCutterAgainParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseWaterCutterAgainParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"UseWaterCutterFirstParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"UseWaterCutterFirstParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"SwitchShock": {
+		"parent": "MapObjBase",
+		"params": {
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"SwitchShockOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"SwitchSoundEffect": {
+		"parent": "SwitchBase",
+		"params": {}
+	},
+	"SwitchSoundEffectOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SwitchThinOutOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"ThinOutInterval": {
+				"type": "int",
+				"default": 180
+			}
+		}
+	},
+	"SwitchTimeLimitRestTimeOcta": {
+		"parent": "SwitchBase",
+		"params": {
+			"RestTimeSec": {
+				"type": "int",
+				"default": 10
+			}
+		}
+	},
+	"SwitchTimer": {
+		"parent": "SwitchBase",
+		"params": {
+			"Mode": {
+				"type": "int",
+				"default": 0
+			},
+			"Time": {
+				"type": "int",
+				"default": 210
+			}
+		}
+	},
+	"SwitchTimerOcta": {
+		"parent": "SwitchBase",
+		"params": {
+			"Mode": {
+				"type": "int",
+				"default": 0
+			},
+			"Time": {
+				"type": "int",
+				"default": 20
+			}
+		}
+	},
+	"SwitchTimerOnline": {
+		"params": {
+			"Mode": {
+				"type": "int",
+				"default": 0
+			},
+			"Time": {
+				"type": "int",
+				"default": 6
+			}
+		},
+		"parent": "SwitchBase"
+	},
+	"SwitchTutorialBgm": {
+		"parent": "SwitchBase",
+		"params": {
+			"AreaIdx": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"SwitchTutorialText": {
+		"parent": "SwitchBase",
+		"params": {
+			"AccentCtrl_0": {
+				"type": "int",
+				"default": 0
+			},
+			"AccentCtrl_1": {
+				"type": "int",
+				"default": 0
+			},
+			"DbgTextMain": {
+				"type": "string",
+				"default": "風船をねらえ！"
+			},
+			"DbgTextSub": {
+				"type": "string",
+				"default": "◎を合わせよう"
+			},
+			"LabelMain": {
+				"type": "string",
+				"default": "Msg_01"
+			},
+			"LabelSub": {
+				"type": "string",
+				"default": "MsgS_01"
+			}
+		}
+	},
+	"SwitchWeakPoint": {
+		"parent": "MapObjBase",
+		"params": {
+			"Life": {
+				"type": "int",
+				"default": 30000
+			},
+			"LocateID": {
+				"type": "int",
+				"default": 2
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"TakodozerVersus": {
+		"params": {},
+		"parent": "MapObjBase"
+	},
+	"TentaclesBLaptopOcta": {
+		"parent": "SimpleEventFlowCharacterOcta",
+		"params": {}
+	},
+	"TentaclesHelicopterDemoOcta": {
+		"parent": "SimpleEventFlowCharacterOcta",
+		"params": {}
+	},
+	"TestClearObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"TestDieObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"TicketGateOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"Launch": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"TimeLimitClearSetterOcta": {
+		"parent": "TimeLimitSetterOcta",
+		"params": {}
+	},
+	"TimeLimitGachiSetterOcta": {
+		"parent": "TimeLimitSetterOcta",
+		"params": {}
+	},
+	"TimeLimitJudgeSetterOcta": {
+		"parent": "TimeLimitSetterOcta",
+		"params": {}
+	},
+	"TimeLimitResetObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"TimeLimitSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"TimeLimitSec": {
+				"type": "int",
+				"default": 180
+			}
+		}
+	},
+	"TimeLimitStartAreaOcta": {
+		"parent": "LocatorBase",
+		"params": {
+			"StartWaitFrame": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"TimeLineDemoObjOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"ForceSkippable": {
+				"type": "bool",
+				"default": false
+			},
+			"PaintReset": {
+				"type": "bool",
+				"default": false
+			},
+			"TimeLineName": {
+				"type": "string",
+				"default": "MissionOcta_LastBoss05EnergyCore"
+			}
+		}
+	},
+	"TrackPaintObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"TrainCameraRumbleObjOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"TrainDoorOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Trap": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"TutorialDirectorObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"TwoPointLift": {
+		"parent": "MapObjBase",
+		"params": {
+			"Braking_Distance": {
+				"type": "float",
+				"default": 50
+			},
+			"Braking_Vel": {
+				"type": "float",
+				"default": 0.1
+			},
+			"IsWeakReject": {
+				"type": "bool",
+				"default": false
+			},
+			"MoveReturnAcc": {
+				"type": "float",
+				"default": 0.1
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 1
+			},
+			"MoveVel": {
+				"type": "float",
+				"default": 1.5
+			},
+			"MoveVelAcc": {
+				"type": "float",
+				"default": 0.1
+			},
+			"PlayerReject": {
+				"type": "int",
+				"default": 3
+			},
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"UFO": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsIgnoreRailAttAndRotate": {
+				"type": "bool",
+				"default": true
+			},
+			"RailFollowAbleParams__SolveType": {
+				"type": "int",
+				"default": 1
+			},
+			"RotSpeedDegPerSec": {
+				"type": "float",
+				"default": 15
+			},
+			"Speed": {
+				"type": "float",
+				"default": 1.6
+			}
+		}
+	},
+	"UFOOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsIgnoreRailAttAndRotate": {
+				"type": "bool",
+				"default": false
+			},
+			"RailFollowAbleParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"RotSpeedDegPerSec": {
+				"type": "float",
+				"default": 15
+			},
+			"Speed": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"VBallBumperOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IkuraDropNum": {
+				"type": "int",
+				"default": 3
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"VGoalOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryBall": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryBallHole": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryBallHoleOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsEnableGravity": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"VictoryBallOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IsEnableCulling": {
+				"type": "bool",
+				"default": true
+			},
+			"IsRotLaunchDashRing": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"VictoryBar": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryClam": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryClamArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"VictoryClamBank": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryClamBankEmitArea": {
+		"parent": "LocatorBase",
+		"params": {
+			"Weight": {
+				"type": "int",
+				"default": 30
+			}
+		}
+	},
+	"VictoryClamBankLandPos": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryClamBasket": {
+		"parent": "MapObjBase",
+		"params": {
+			"ClamSupplySpeed": {
+				"type": "float",
+				"default": 1
+			},
+			"DegAxisY_SpawnFromGoal": {
+				"type": "float",
+				"default": 0
+			},
+			"HeightBarrierCenter": {
+				"type": "float",
+				"default": 60
+			},
+			"IsAutoGenOpposite": {
+				"type": "bool",
+				"default": true
+			}
+		}
+	},
+	"VictoryClamContainer": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryClamGolden": {
+		"parent": "VictoryClam",
+		"params": {}
+	},
+	"VictoryClamGoldenHolding": {
+		"parent": "VictoryClamHolding",
+		"params": {}
+	},
+	"VictoryClamHolding": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryClamSpawnPoint": {
+		"parent": "LocatorBase",
+		"params": {
+			"IsGenMirror": {
+				"type": "bool",
+				"default": false
+			},
+			"IsGenMirror_AxisX": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"VictoryGoal": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryLift": {
+		"parent": "Cmn::KDGndCol::BlockKCol",
+		"params": {}
+	},
+	"VictoryLiftOcta": {
+		"parent": "Cmn::KDGndCol::BlockKCol",
+		"params": {}
+	},
+	"VictoryRocket": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"VictoryRocketNode": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"VictoryRocketNozzle": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WeaponSetterOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"EmptyNoHand": {
+				"type": "bool",
+				"default": true
+			},
+			"MainWeaponName": {
+				"type": "other",
+				"default": null
+			},
+			"SubWeaponName": {
+				"type": "other",
+				"default": null
+			}
+		}
+	},
+	"WeaponSymbolOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WoodenBox": {
+		"parent": "MapObjBase",
+		"params": {
+			"IkuraDropNum": {
+				"type": "int",
+				"default": 0
+			},
+			"InkHidable__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropable__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"WoodenBoxOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"IkuraDropNum": {
+				"type": "int",
+				"default": 0
+			},
+			"InkHidable__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"IsBindXZOnActorBind": {
+				"type": "bool",
+				"default": false
+			},
+			"IsLabelOff": {
+				"type": "bool",
+				"default": false
+			},
+			"IsUseContinuousBreakSEReduction": {
+				"type": "bool",
+				"default": true
+			},
+			"ItemDropable__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"WoodenBoxOnline": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WorldAirBall": {
+		"parent": "AirBall",
+		"params": {
+			"IkuraDropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"InkHidableParams__HideMode": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"WorldAori": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WorldAreaJumpTargetPosEntry": {
+		"parent": "WorldAreaJumpTargetPos",
+		"params": {}
+	},
+	"WorldAreaJumpTargetPosExit": {
+		"parent": "WorldAreaJumpTargetPos",
+		"params": {}
+	},
+	"WorldHotaru": {
+		"parent": "MapObjBase",
+		"params": {
+			"MessageLabel": {
+				"type": "string",
+				"default": "Talk_W3Guide_100,Talk_W3Guide_100,Talk_W3Guide_900"
+			}
+		}
+	},
+	"WorldHotaruLocator": {
+		"parent": "LocatorBase",
+		"params": {
+			"MessageLabel": {
+				"type": "string",
+				"default": "Talk_W3Guide_200,Talk_W3Guide_200,Talk_W3Guide_900"
+			}
+		}
+	},
+	"WorldHotaruLocatorByAori": {
+		"parent": "WorldHotaruLocator",
+		"params": {}
+	},
+	"WorldHotaruLookPos": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"WorldLastBossHouse": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WorldOctRock": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WorldRespawnPosLocator": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"WorldStaffRollObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WorldWeaponBuffMachine": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CoopEnemy": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyBase": {
+		"parent": "Obj",
+		"params": {
+			"IsAttachAirBall": {
+				"type": "bool",
+				"default": false
+			},
+			"AirBallIkuraDropNum": {
+				"type": "int",
+				"default": 0
+			},
+			"UseFrontWithBindable": {
+				"type": "bool",
+				"default": false
+			},
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsUnbindOnActivate": {
+				"type": "bool",
+				"default": false
+			},
+			"IsFaceToPlayerOnActivate": {
+				"type": "bool",
+				"default": false
+			},
+			"IsReviveBySwitch": {
+				"type": "bool",
+				"default": false
+			},
+			"ToSwitchAllDead": {
+				"type": "string",
+				"default": ""
+			},
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 0
+			},
+			"ItemDropableParams__Item": {
+				"type": "string",
+				"default": ""
+			}
+		}
+	},
+	"LocatorBase": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"CoopSpawnPoint": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"CoopObject": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CoopItem": {
+		"parent": "ItemBase",
+		"params": {}
+	},
+	"CoopArrivalPointEnemy": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"CoopGraphCostController": {
+		"parent": "LocatorBase",
+		"params": {}
+	},
+	"NpcBase": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"ItemBase": {
+		"parent": "Obj",
+		"params": {
+			"CheckColPillerContinuous": {
+				"type": "bool",
+				"default": false
+			},
+			"DontActivateOnRespawn": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"CoopEnemySakepuncherBullet": {
+		"parent": "CoopEnemy",
+		"params": {}
+	},
+	"Obj": {
+		"parent": "Actor",
+		"params": {}
+	},
+	"Actor": {
+		"parent": "Cmn::Actor",
+		"params": {}
+	},
+	"Cmn::Actor": {
+		"parent": "Lp::Sys::Actor",
+		"params": {
+			"Team": {
+				"type": "int",
+				"default": -1
+			}
+		}
+	},
+	"Lp::Sys::Actor": {},
+	"MapObjBase": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"SwitchBase": {
+		"parent": "Obj",
+		"params": {
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"Switchable__RespawnReset": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"SwitchAreaBase": {
+		"parent": "SwitchBase",
+		"params": {
+			"Timing": {
+				"type": "int",
+				"default": 0
+			},
+			"Trig": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"ShelterDummyBase": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"MissionGimmick": {
+		"parent": "MapObjBase",
+		"params": {
+			"RunType": {
+				"type": "int",
+				"default": 0
+			},
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"PlayerApproachDistance": {
+				"type": "float",
+				"default": 100
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"RivalMoveLimitAreaBase": {
+		"parent": "LocatorBase",
+		"params": {
+			"GroupID": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"CheckPointBaseOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"SwitchableParams__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"IsStepType": {
+				"type": "bool",
+				"default": false
+			},
+			"IsAppearWithSwitchOn": {
+				"type": "bool",
+				"default": false
+			},
+			"SwitchableParams__RespawnReset": {
+				"type": "int",
+				"default": 2
+			}
+		}
+	},
+	"MissionGimmickOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"NpcPlayer": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"LiftOcta": {
+		"parent": "MapObjBase",
+		"params": {
+			"BindType": {
+				"type": "int",
+				"default": 0
+			},
+			"CombineRailAndFreeRotate": {
+				"type": "bool",
+				"default": false
+			},
+			"CombineRotation": {
+				"type": "bool",
+				"default": false
+			},
+			"FreeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"FreeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"IsAbleToBeCulled": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCalcVelGndOneMoreLong": {
+				"type": "bool",
+				"default": false
+			},
+			"IsClearPaintOnWarp": {
+				"type": "bool",
+				"default": false
+			},
+			"IsCreateSpecificSLinkUserName": {
+				"type": "bool",
+				"default": false
+			},
+			"IsObjPaintForResult": {
+				"type": "bool",
+				"default": false
+			},
+			"IsShowLiftAlertDbg": {
+				"type": "bool",
+				"default": false
+			},
+			"LiftAlertPredictFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"OneTimeRotDeg__X": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Y": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotDeg__Z": {
+				"type": "float",
+				"default": 0
+			},
+			"OneTimeRotateDelay": {
+				"type": "int",
+				"default": 0
+			},
+			"OneTimeRotateFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"OneTimeRotateInterpolationType": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__AttCalc": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__BreakFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__ConstantVelUnitLength": {
+				"type": "float",
+				"default": 10
+			},
+			"RailableParams__Interpolation": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__MoveFrame": {
+				"type": "int",
+				"default": 1800
+			},
+			"RailableParams__Patrol": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__StandbyFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"RailableParams__Vel": {
+				"type": "int",
+				"default": 0
+			},
+			"RepeatOneTimeRotIntervalFrame": {
+				"type": "int",
+				"default": 60
+			},
+			"RespawnReset": {
+				"type": "bool",
+				"default": false
+			},
+			"RotateType": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleTiming": {
+				"type": "int",
+				"default": 0
+			},
+			"RumbleType": {
+				"type": "int",
+				"default": 0
+			},
+			"RunOverSubWeapon": {
+				"type": "bool",
+				"default": false
+			},
+			"StageViewDemoAnim": {
+				"type": "other",
+				"default": null
+			},
+			"WarpTargetPosBlockable": {
+				"type": "bool",
+				"default": false
+			},
+			"WarpTargetPosCheckWall": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"LiftOrderObjBaseOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"DemoObjBase": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Cmn::KDGndCol::BlockKCol": {
+		"parent": "Cmn::Actor",
+		"params": {
+			"Height": {
+				"type": "int",
+				"default": 1
+			},
+			"YaguraOffsetY": {
+				"type": "float",
+				"default": 0
+			},
+			"PlayerInclusionRejectWeak": {
+				"type": "bool",
+				"default": false
+			},
+			"RailableParams__SolveType": {
+				"type": "int",
+				"default": 0
+			},
+			"IsGoalReverse": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"GatewayBase": {
+		"parent": "MapObjBase",
+		"params": {
+			"DestMapFileName": {
+				"type": "string",
+				"default": "Fld_BossStampKingDeco_Msn"
+			},
+			"UseInitPlayerPosForWarp": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"ItemIkuraBase": {
+		"parent": "ItemBase",
+		"params": {
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			},
+			"IsCheckGndCol": {
+				"type": "bool",
+				"default": false
+			}
+		}
+	},
+	"EnemyBossBaseOcta": {
+		"parent": "EnemyBase",
+		"params": {
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"ItemWithPedestal": {
+		"parent": "ItemBase",
+		"params": {
+			"Switchable__RespawnReset": {
+				"type": "int",
+				"default": 2
+			},
+			"Switchable__InitialState": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"EnemyBossBase": {
+		"parent": "EnemyBase",
+		"params": {
+			"ItemDropableParams__DropNum": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"BreakCounterBaseOcta": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"WorldAreaJumpTargetPos": {
+		"parent": "LocatorBase",
+		"params": {
+			"AreaNo": {
+				"type": "int",
+				"default": 1
+			}
+		}
+	},
+	"ItemMissionCollectionBase": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"ItemCanBaseOcta": {
+		"parent": "ItemWithPedestal",
+		"params": {}
+	},
+	"EnemyDonketsu": {
+		"parent": "EnemyBase",
+		"params": {}
+	}
+}

@@ -1,5 +1,5 @@
 ## Inspector panel for editing map object properties.
-## Groups parameters by inheritance level (Base Class, Actor Specific, Component Params).
+## Groups parameters by Params class origin (Switchable, Railable, Area, etc).
 ## Supports null string values via <null> toggle (Issue 6).
 @tool
 extends VBoxContainer
@@ -66,15 +66,22 @@ func inspect_object(obj: MapObject, actor_db: ActorDatabase, doc: ByamlDocument)
 		_mark_dirty()
 	)
 
-	# Actor parameters grouped by inheritance
+	# Actor parameters grouped by origin class
 	var grouped := actor_db.get_grouped_params(obj.unit_config_name)
 
-	# Display order: Base Class -> Actor Specific -> Component params
+	# Display order: base/common groups first, component groups, then specific
+	var _BASE_ORDER: Array[String] = ["Base", "Common", "Actor", "Object", "Enemy",
+		"Item", "NPC", "Map Object", "Locator", "Lift", "Switch", "Checkpoint",
+		"Break Counter", "Demo Object", "Designer Object", "Designer Anim", "Field",
+		"Area", "Switchable", "Railable", "Rail Followable", "Item Droppable",
+		"Ink Hidable", "Enemy Railable", "Schedulable", "Air Ball Hangable",
+		"Rotation", "Movement"]
 	var group_order: Array[String] = []
-	if grouped.has("Base Class"):
-		group_order.append("Base Class")
-	if grouped.has("Actor Specific"):
-		group_order.append("Actor Specific")
+	# Add known base groups first (in order)
+	for base_name: String in _BASE_ORDER:
+		if grouped.has(base_name):
+			group_order.append(base_name)
+	# Add remaining groups alphabetically
 	for g: String in grouped:
 		if g not in group_order:
 			group_order.append(g)

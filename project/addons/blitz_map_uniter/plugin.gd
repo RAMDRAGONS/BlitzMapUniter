@@ -45,6 +45,8 @@ func _enter_tree() -> void:
 
 	# Monitor node deletion from scene tree
 	get_tree().node_removed.connect(_on_node_removed)
+	# Monitor node addition for copy/paste duplicate handling
+	get_tree().node_added.connect(_on_node_added)
 
 	# Monitor selection changes to refresh gizmos (Issue 7)
 	get_editor_interface().get_selection().selection_changed.connect(_on_selection_changed)
@@ -52,6 +54,8 @@ func _enter_tree() -> void:
 func _exit_tree() -> void:
 	if get_tree().node_removed.is_connected(_on_node_removed):
 		get_tree().node_removed.disconnect(_on_node_removed)
+	if get_tree().node_added.is_connected(_on_node_added):
+		get_tree().node_added.disconnect(_on_node_added)
 	var selection := get_editor_interface().get_selection()
 	if selection.selection_changed.is_connected(_on_selection_changed):
 		selection.selection_changed.disconnect(_on_selection_changed)
@@ -122,12 +126,41 @@ func _on_selection_changed() -> void:
 		return
 	# Force gizmo redraw on all map objects so link lines update
 	_refresh_gizmos_recursive(_map_root)
+	# Show/hide area volumes based on selection
+	_update_area_volume_visibility()
 
 func _refresh_gizmos_recursive(node: Node) -> void:
 	if node is Node3D and (node.has_meta("_map_object") or node.has_meta("_map_rail")):
 		(node as Node3D).update_gizmos()
 	for child in node.get_children():
 		_refresh_gizmos_recursive(child)
+
+## Show area volume meshes for selected area/coop nodes, hide for unselected.
+func _update_area_volume_visibility() -> void:
+	var selected: Array[Node] = get_editor_interface().get_selection().get_selected_nodes()
+	var selected_set: Dictionary = {}
+	for n: Node in selected:
+		selected_set[n] = true
+
+	_set_area_volumes_recursive(_map_root, selected_set)
+
+func _set_area_volumes_recursive(node: Node, selected_set: Dictionary) -> void:
+	if node is Node3D and node.has_meta("_map_object"):
+		var ucn := str(node.get_meta("_map_ucn", ""))
+		if _is_icon_only_object(ucn):
+			var mesh_container := node.get_node_or_null("Mesh")
+			if mesh_container:
+				var volume := mesh_container.get_node_or_null("AreaVolume")
+				if volume:
+					volume.visible = selected_set.has(node)
+		# Toggle show_on_select debug gizmos
+		var debug_gizmo := node.get_node_or_null("DebugGizmo")
+		if debug_gizmo:
+			var config := _get_gizmo_config(ucn)
+			if config.get("show_on_select", false):
+				debug_gizmo.visible = selected_set.has(node)
+	for child in node.get_children():
+		_set_area_volumes_recursive(child, selected_set)
 
 # ============================================================
 # Map Loading
@@ -215,6 +248,11 @@ func _create_actor_node(obj: MapObject) -> Node3D:
 	var mesh_inst := _create_visual_mesh(obj)
 	node.add_child(mesh_inst)
 
+	# Debug shape gizmo — IDA-verified collision/debug visualization
+	var debug_gizmo := _create_debug_gizmo(obj)
+	if debug_gizmo:
+		node.add_child(debug_gizmo)
+
 	# Label — apply inverse parent scale to prevent stretching
 	var label := Label3D.new()
 	label.name = "Label"
@@ -296,7 +334,7 @@ func _create_visual_mesh(obj: MapObject) -> Node3D:
 		var half := unit_size / 2.0
 		var is_cylinder := ucn.contains("Cylinder")
 
-		# Volume mesh for editor selection
+		# Volume mesh — hidden by default, shown only when selected
 		if is_cylinder:
 			mesh = CylinderMesh.new()
 			(mesh as CylinderMesh).top_radius = half
@@ -308,19 +346,15 @@ func _create_visual_mesh(obj: MapObject) -> Node3D:
 
 		var mat := StandardMaterial3D.new()
 		mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		if is_cylinder:
-			# Semi-transparent wireframe so cylindrical shape is visible
-			mat.albedo_color = Color(0.3, 0.8, 1.0, 0.15)
-			mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-			mat.cull_mode = BaseMaterial3D.CULL_DISABLED
-		else:
-			mat.albedo_color = Color(0, 0, 0, 0)
-			mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-			mat.no_depth_test = true
+		mat.albedo_color = Color(0.3, 0.8, 1.0, 0.15)
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		mat.cull_mode = BaseMaterial3D.CULL_DISABLED
 		mesh_inst.mesh = mesh
 		mesh_inst.material_override = mat
+		mesh_inst.visible = false  # Hidden until selected
+		mesh_inst.name = "AreaVolume"
 
-		# Build container with invisible volume + icon sprite
+		# Build container with hidden volume + icon sprite
 		var container := Node3D.new()
 		container.name = "Mesh"
 		container.add_child(mesh_inst)
@@ -355,7 +389,13 @@ func _create_visual_mesh(obj: MapObject) -> Node3D:
 
 	mesh_inst.mesh = mesh
 	mesh_inst.material_override = mat
-	return mesh_inst
+
+	# Add directional arrows to placeholder models
+	var container := Node3D.new()
+	container.name = "Mesh"
+	container.add_child(mesh_inst)
+	_add_direction_arrows(container)
+	return container
 
 ## Try loading a cached GLTF model.
 ## Lookup order: fmdb_name (model inside BFRES) → res_name (BFRES file) → UCN.
@@ -386,6 +426,298 @@ func _try_load_cached_model(ucn: String) -> Node3D:
 			return scene
 
 	return null
+
+# ============================================================
+# Directional Arrows (forward/up indicators on placeholder models)
+# ============================================================
+
+## Creates a single arrow from shaft + cone head.
+static func _make_arrow(arrow_color: Color, length: float) -> Node3D:
+	var arrow := Node3D.new()
+	var shaft_length := length * 0.7
+	var head_length := length * 0.3
+
+	# Shaft — thin cylinder along +Y (we rotate the whole arrow later)
+	var shaft := MeshInstance3D.new()
+	var shaft_mesh := CylinderMesh.new()
+	shaft_mesh.top_radius = 0.04
+	shaft_mesh.bottom_radius = 0.04
+	shaft_mesh.height = shaft_length
+	shaft.mesh = shaft_mesh
+	shaft.position = Vector3(0, shaft_length / 2.0, 0)
+	var shaft_mat := StandardMaterial3D.new()
+	shaft_mat.albedo_color = arrow_color
+	shaft_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	shaft.material_override = shaft_mat
+	arrow.add_child(shaft)
+
+	# Head — cone at the tip
+	var head := MeshInstance3D.new()
+	var head_mesh := CylinderMesh.new()
+	head_mesh.top_radius = 0.0
+	head_mesh.bottom_radius = 0.12
+	head_mesh.height = head_length
+	head.mesh = head_mesh
+	head.position = Vector3(0, shaft_length + head_length / 2.0, 0)
+	var head_mat := StandardMaterial3D.new()
+	head_mat.albedo_color = arrow_color
+	head_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	head.material_override = head_mat
+	arrow.add_child(head)
+
+	return arrow
+
+## Add forward (blue, -Z) and up (green, +Y) arrows to a placeholder container.
+static func _add_direction_arrows(container: Node3D) -> void:
+	# Forward arrow (blue) — points in -Z direction
+	var fwd := _make_arrow(Color(0.2, 0.4, 1.0), 1.5)
+	fwd.name = "ArrowForward"
+	# Arrow is built along +Y; rotate -90° around X to point in -Z
+	fwd.rotation_degrees = Vector3(-90, 0, 0)
+	container.add_child(fwd)
+
+	# Up arrow (green) — points in +Y direction
+	var up := _make_arrow(Color(0.2, 1.0, 0.3), 1.2)
+	up.name = "ArrowUp"
+	# Already built along +Y, no rotation needed
+	container.add_child(up)
+
+# ============================================================
+# Debug Shape Gizmos — IDA-verified collision/debug visualizations
+# ============================================================
+
+## Debug shape gizmo configurations keyed by actor CLASS name.
+## Each maps to the collision/debug shape verified via IDA reverse engineering
+## of the game's debugDraw_() and makeColShape*() functions.
+## "overlay": true means the gizmo shows on top of an existing 3D model.
+const _DEBUG_GIZMO_CONFIG: Dictionary = {
+	# Game::Geyser::debugDraw_() — magenta capsule blast zone
+	# makeGeyserShape: capsule from position upward by MaxHeight along up-vector
+	"Geyser": {
+		"shape": "capsule",
+		"color": Color(1.0, 0.0, 1.0, 0.3),
+		"height_param": "MaxHeight",
+		"height_default": 90.0,
+		"radius": 8.0,
+		"overlay": true,
+		"show_on_select": true,
+	},
+	# Game::RespawnPoint::makeColShapeSphere_() — spawn radius
+	# center = position, radius from RespawnPointParamsFamily
+	"RespawnPoint": {
+		"shape": "sphere",
+		"color": Color(0.0, 1.0, 0.5, 0.25),
+		"radius": 5.0,
+		"uniform_scale": true,
+	},
+	# Game::AutoWarpPoint::makeColShapeCylinder_() — warp activation zone
+	"AutoWarpPoint": {
+		"shape": "cylinder",
+		"color": Color(1.0, 0.8, 0.0, 0.25),
+		"radius": 5.0,
+		"height": 10.0,
+	},
+	# Game::Compass::makeColShapeSphere_() — interaction range
+	"Compass": {
+		"shape": "sphere",
+		"color": Color(0.0, 0.5, 1.0, 0.25),
+		"radius": 8.0,
+		"uniform_scale": true,
+	},
+	# Game::MissionPoisonFog::debugDraw_() — white fog boundary sphere
+	# entryShape(sphere, &sead::Color4f::cWhite, 1, 0)
+	"MissionPoisonFog": {
+		"shape": "sphere",
+		"color": Color(1.0, 1.0, 1.0, 0.2),
+		"radius": 15.0,
+		"uniform_scale": true,
+	},
+	# Game::DashPanel::makeColShapeBoxForWall_() — boost zone
+	"DashPanel": {
+		"shape": "box",
+		"color": Color(0.0, 1.0, 1.0, 0.25),
+		"size_x": 4.0, "size_y": 1.0, "size_z": 4.0,
+	},
+	# Game::Shield — dual collision (box + cylinder), shown as box
+	"Shield": {
+		"shape": "box",
+		"color": Color(0.3, 0.3, 1.0, 0.25),
+		"size_x": 6.0, "size_y": 6.0, "size_z": 2.0,
+	},
+	# Game::Coop::SpawnBox::makeShapeColBox_() — enemy spawn zone
+	"CoopSpawnBox": {
+		"shape": "box",
+		"color": Color(1.0, 0.3, 0.0, 0.25),
+		"size_x": 10.0, "size_y": 5.0, "size_z": 10.0,
+	},
+	# Game::SwitchShock collision sphere — shock effect radius
+	"SwitchShock": {
+		"shape": "sphere",
+		"color": Color(1.0, 1.0, 0.0, 0.2),
+		"radius": 10.0,
+		"overlay": true,
+	},
+	# Game::UFO::debugDraw_() — awareness radius sphere
+	"UFO": {
+		"shape": "sphere",
+		"color": Color(1.0, 0.5, 0.0, 0.15),
+		"radius": 30.0,
+		"overlay": true,
+	},
+	# Game::CoopLocator_SpawnBox — enemy allocatable spawn radius
+	# AllocatableRadius param defines the area within which enemies may spawn
+	"CoopLocator_SpawnBox": {
+		"shape": "sphere",
+		"color": Color(1.0, 0.3, 0.0, 0.15),
+		"radius_param": "AllocatableRadius",
+		"radius_default": 50.0,
+		"show_on_select": true,
+		"uniform_scale": true,
+	},
+	# Game::InkBar — cylinder with Radius param (uses Sample_ model we don't have)
+	"InkBar": {
+		"shape": "cylinder",
+		"color": Color(0.6, 0.0, 0.8, 0.25),
+		"radius_param": "Radius",
+		"radius_default": 10.0,
+		"height": 3.0,
+		"show_on_select": true,
+	},
+}
+
+## Resolve the debug gizmo config for an actor by walking its class hierarchy.
+## Returns the first matching config dict, or empty if no gizmo is defined.
+func _get_gizmo_config(ucn: String) -> Dictionary:
+	var db := ActorDatabase.get_instance()
+	var actor_class := db.get_class_name(ucn)
+	if actor_class.is_empty():
+		return {}
+
+	# Walk the class hierarchy to find a matching config
+	var current := actor_class
+	var visited: Dictionary = {}
+	while not current.is_empty() and not visited.has(current):
+		if _DEBUG_GIZMO_CONFIG.has(current):
+			return _DEBUG_GIZMO_CONFIG[current]
+		visited[current] = true
+		var cls_data: Dictionary = db._classes.get(current, {})
+		current = cls_data.get("parent", "")
+	return {}
+
+## Create a debug shape gizmo node for actors with IDA-verified shapes.
+## Returns null if no gizmo is defined for this actor type.
+func _create_debug_gizmo(obj: MapObject) -> Node3D:
+	var config := _get_gizmo_config(obj.unit_config_name)
+	if config.is_empty():
+		return null
+
+	var shape_type: String = config.get("shape", "")
+	var color: Color = config.get("color", Color(1, 1, 1, 0.25))
+
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = color
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+
+	var gizmo := Node3D.new()
+	gizmo.name = "DebugGizmo"
+
+	match shape_type:
+		"sphere":
+			var radius: float = config.get("radius", 5.0)
+			# Support reading radius from BYAML param
+			var radius_param: String = config.get("radius_param", "")
+			if not radius_param.is_empty() and obj.params.has(radius_param):
+				radius = float(obj.params[radius_param])
+			elif not radius_param.is_empty():
+				radius = config.get("radius_default", radius)
+			var sm := SphereMesh.new()
+			sm.radius = radius
+			sm.height = radius * 2.0
+			var mi := MeshInstance3D.new()
+			mi.name = "GizmoMesh"
+			mi.mesh = sm
+			mi.material_override = mat
+			gizmo.add_child(mi)
+
+		"capsule":
+			var radius: float = config.get("radius", 5.0)
+			var height_param: String = config.get("height_param", "")
+			var height: float = config.get("height_default", 20.0)
+			# Read actual height from object params if available
+			if not height_param.is_empty() and obj.params.has(height_param):
+				height = float(obj.params[height_param])
+			var cm := CapsuleMesh.new()
+			cm.radius = radius
+			cm.height = height + radius * 2.0
+			var mi := MeshInstance3D.new()
+			mi.name = "GizmoMesh"
+			mi.mesh = cm
+			mi.material_override = mat
+			# Offset upward so bottom hemisphere sits at object origin
+			mi.position.y = height / 2.0
+			gizmo.add_child(mi)
+
+		"box":
+			var size := Vector3(
+				config.get("size_x", 4.0),
+				config.get("size_y", 4.0),
+				config.get("size_z", 4.0))
+			var bm := BoxMesh.new()
+			bm.size = size
+			var mi := MeshInstance3D.new()
+			mi.name = "GizmoMesh"
+			mi.mesh = bm
+			mi.material_override = mat
+			gizmo.add_child(mi)
+
+		"cylinder":
+			var radius: float = config.get("radius", 5.0)
+			var radius_param: String = config.get("radius_param", "")
+			if not radius_param.is_empty() and obj.params.has(radius_param):
+				radius = float(obj.params[radius_param])
+			elif not radius_param.is_empty():
+				radius = config.get("radius_default", radius)
+			var height: float = config.get("height", 10.0)
+			var cylm := CylinderMesh.new()
+			cylm.top_radius = radius
+			cylm.bottom_radius = radius
+			cylm.height = height
+			var mi := MeshInstance3D.new()
+			mi.name = "GizmoMesh"
+			mi.mesh = cylm
+			mi.material_override = mat
+			# Bottom at object origin
+			mi.position.y = height / 2.0
+			gizmo.add_child(mi)
+
+	# Counteract parent actor scale so gizmo keeps real collision dimensions.
+	# For shapes defined in world-space (like allocatable radius spheres),
+	# use uniform scale to prevent distortion. For shapes that follow the
+	# actor's collision (which scales per-axis), use per-axis counteraction.
+	var s := obj.scale
+	if config.get("uniform_scale", false):
+		# Use the largest axis to keep the shape from clipping inside the model
+		var max_s := maxf(maxf(absf(s.x), absf(s.y)), absf(s.z))
+		var inv := 1.0 / maxf(max_s, 0.001)
+		gizmo.scale = Vector3(inv, inv, inv)
+	else:
+		gizmo.scale = Vector3(
+			1.0 / maxf(absf(s.x), 0.001),
+			1.0 / maxf(absf(s.y), 0.001),
+			1.0 / maxf(absf(s.z), 0.001))
+
+	# Hide initially if show_on_select — toggled by _update_debug_gizmo_visibility()
+	if config.get("show_on_select", false):
+		gizmo.visible = false
+
+	return gizmo
+
+## Check if an actor has an overlay gizmo (shown on top of its real model).
+func _is_overlay_gizmo(ucn: String) -> bool:
+	var config := _get_gizmo_config(ucn)
+	return config.get("overlay", false)
 
 # ============================================================
 # Icon Sprite System (Areas + Coop spawn/arrival objects)
@@ -683,20 +1015,34 @@ func _do_restore_ucn(node: Node3D, ucn: String, params: Dictionary, raw: Diction
 
 	var old_mesh := node.get_node_or_null("Mesh")
 	if old_mesh:
+		node.remove_child(old_mesh)
 		old_mesh.queue_free()
 	var old_sprite := node.get_node_or_null("IconSprite")
 	if old_sprite:
+		node.remove_child(old_sprite)
 		old_sprite.queue_free()
+	var old_gizmo := node.get_node_or_null("DebugGizmo")
+	if old_gizmo:
+		node.remove_child(old_gizmo)
+		old_gizmo.queue_free()
 
 	var tmp := MapObject.new()
 	tmp.unit_config_name = ucn
 	tmp.model_name = str(raw.get("ModelName", ""))
+	tmp.params = params
+	tmp.scale = node.scale
 	var new_mesh := _create_visual_mesh(tmp)
 	node.add_child(new_mesh)
+	var new_gizmo := _create_debug_gizmo(tmp)
+	if new_gizmo:
+		node.add_child(new_gizmo)
 	var scene_root := get_editor_interface().get_edited_scene_root()
 	if scene_root:
 		new_mesh.owner = scene_root
 		_set_owner_recursive(new_mesh, scene_root)
+		if new_gizmo:
+			new_gizmo.owner = scene_root
+			_set_owner_recursive(new_gizmo, scene_root)
 	get_editor_interface().inspect_object(node)
 
 func _do_change_ucn(node: Node3D, ucn: String) -> void:
@@ -744,22 +1090,37 @@ func _do_change_ucn(node: Node3D, ucn: String) -> void:
 	# Rebuild visual mesh
 	var old_mesh := node.get_node_or_null("Mesh")
 	if old_mesh:
+		node.remove_child(old_mesh)
 		old_mesh.queue_free()
 	# Remove old icon sprite too
 	var old_sprite := node.get_node_or_null("IconSprite")
 	if old_sprite:
+		node.remove_child(old_sprite)
 		old_sprite.queue_free()
+	# Remove old debug gizmo
+	var old_gizmo := node.get_node_or_null("DebugGizmo")
+	if old_gizmo:
+		node.remove_child(old_gizmo)
+		old_gizmo.queue_free()
 
 	# Create a temporary MapObject to build the visual
 	var tmp := MapObject.new()
 	tmp.unit_config_name = ucn
 	tmp.model_name = str(raw.get("ModelName", ""))
+	tmp.params = new_params
+	tmp.scale = node.scale
 	var new_mesh := _create_visual_mesh(tmp)
 	node.add_child(new_mesh)
+	var new_gizmo := _create_debug_gizmo(tmp)
+	if new_gizmo:
+		node.add_child(new_gizmo)
 	var scene_root := get_editor_interface().get_edited_scene_root()
 	if scene_root:
 		new_mesh.owner = scene_root
 		_set_owner_recursive(new_mesh, scene_root)
+		if new_gizmo:
+			new_gizmo.owner = scene_root
+			_set_owner_recursive(new_gizmo, scene_root)
 
 	# Refresh inspector
 	get_editor_interface().inspect_object(node)
@@ -998,6 +1359,116 @@ func _on_node_removed(node: Node) -> void:
 					_dock.document.rails.remove_at(i)
 					print("BlitzMapUniter: Removed rail %s from document" % rail_id)
 					break
+
+## Handle node duplication (copy/paste or Ctrl+D).
+## When a map object node is added and its ID already exists in the document,
+## it's a duplicate — assign a new unique ID and register a new MapObject.
+func _on_node_added(node: Node) -> void:
+	if not _dock or not _dock.document:
+		return
+	if not node is Node3D:
+		return
+	if not node.has_meta("_map_object"):
+		return
+	# Defer to let the tree settle after the add (avoids re-entrant issues)
+	call_deferred("_handle_possible_duplicate", node)
+
+func _handle_possible_duplicate(node: Node3D) -> void:
+	if not is_instance_valid(node) or not _dock or not _dock.document:
+		return
+	if not node.has_meta("_map_object"):
+		return
+
+	var old_id := str(node.get_meta("_map_object_id", ""))
+	if old_id.is_empty():
+		return
+
+	# Check if this ID already exists as another node in the tree (= duplicate)
+	var existing := _find_node_by_meta(_map_root, "_map_object_id", old_id) if _map_root else null
+	if not existing or existing == node:
+		return  # Not a duplicate — this node owns the ID
+
+	# This is a duplicated node. Generate a new unique ID.
+	var new_id: String = _dock._next_object_id()
+
+	# Build a new MapObject for the document
+	var ucn := str(node.get_meta("_map_ucn", "Obj_Unknown"))
+	var layer := str(node.get_meta("_map_layer", "Cmn"))
+	var params: Dictionary = node.get_meta("_map_params", {}).duplicate(true)
+	var links: Dictionary = node.get_meta("_map_links", {}).duplicate(true)
+	var raw_dict: Dictionary = node.get_meta("_map_raw_dict", {}).duplicate(true)
+
+	# Update the raw dict with the new ID
+	raw_dict["Id"] = new_id
+
+	var obj := MapObject.new()
+	obj.unit_config_name = ucn
+	obj.id = new_id
+	obj.layer = layer
+	obj.params = params
+	obj.links = links
+	obj.is_link_dest = false  # Duplicate starts as non-link-dest
+	obj._raw_dict = raw_dict
+	obj.position = (node as Node3D).position
+	obj.rotation_degrees = MapObject.godot_basis_to_game_euler((node as Node3D).basis)
+	obj.scale = (node as Node3D).scale
+
+	# Update node metadata
+	node.set_meta("_map_object_id", new_id)
+	node.set_meta("_map_params", params)
+	node.set_meta("_map_links", links)
+	node.set_meta("_map_is_link_dest", false)
+	node.set_meta("_map_raw_dict", raw_dict)
+	node.name = "%s_%s" % [ucn, new_id]
+
+	# Rebuild visual children (label + icon/mesh) to avoid broken duplicates
+	_rebuild_visual_children(node, obj)
+
+	# Register in document
+	_dock.document.objects.append(obj)
+	print("BlitzMapUniter: Duplicated object %s → %s (%s)" % [old_id, new_id, ucn])
+
+## Rebuild the label and mesh children of a node after duplication.
+## Removes old Label, Mesh, and DebugGizmo children, creates fresh ones.
+func _rebuild_visual_children(node: Node3D, obj: MapObject) -> void:
+	# Remove old visual children
+	for child in node.get_children():
+		if child.name == "Label" or child.name == "Mesh" or child.name == "DebugGizmo":
+			node.remove_child(child)
+			child.queue_free()
+
+	# Re-create visual mesh
+	var mesh_inst := _create_visual_mesh(obj)
+	node.add_child(mesh_inst)
+	var scene_root := get_editor_interface().get_edited_scene_root()
+	if scene_root:
+		_set_owner_recursive(mesh_inst, scene_root)
+
+	# Re-create debug gizmo
+	var debug_gizmo := _create_debug_gizmo(obj)
+	if debug_gizmo:
+		node.add_child(debug_gizmo)
+		if scene_root:
+			_set_owner_recursive(debug_gizmo, scene_root)
+
+	# Re-create label with inverse scale to prevent stretching
+	var label := Label3D.new()
+	label.name = "Label"
+	label.text = obj.unit_config_name
+	label.pixel_size = 0.02
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	label.modulate = Color(1, 1, 1, 0.7)
+	label.font_size = 12
+	var s := obj.scale
+	var inv_scale := Vector3(
+		1.0 / maxf(absf(s.x), 0.001),
+		1.0 / maxf(absf(s.y), 0.001),
+		1.0 / maxf(absf(s.z), 0.001))
+	label.scale = inv_scale
+	label.position = Vector3(0, 2.5 * inv_scale.y, 0)
+	node.add_child(label)
+	if scene_root:
+		label.owner = scene_root
 
 # ============================================================
 # Utility

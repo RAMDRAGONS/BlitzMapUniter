@@ -69,7 +69,7 @@ func _build_ui() -> void:
 	save_as_menu.tooltip_text = "Save to a new file"
 	save_as_menu.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var popup := save_as_menu.get_popup()
-	popup.add_item("BYAML (.byml)", 0)
+	popup.add_item("BYAML (.byaml)", 0)
 	popup.add_item("SZS (.szs)", 1)
 	popup.add_item("Map.pack (.pack)", 2)
 	popup.id_pressed.connect(_on_save_as_menu)
@@ -547,7 +547,7 @@ func _on_save_as_menu(id: int) -> void:
 		return
 	pre_save_sync_requested.emit()
 	match id:
-		0: _save_as_dialog("byml")
+		0: _save_as_dialog("byaml")
 		1: _save_as_dialog("szs")
 		2: _save_as_dialog("pack")
 
@@ -556,8 +556,8 @@ func _save_as_dialog(format: String) -> void:
 	dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
 	dialog.access = FileDialog.ACCESS_FILESYSTEM
 	match format:
-		"byml":
-			dialog.filters = PackedStringArray(["*.byml ; BYAML files"])
+		"byaml":
+			dialog.filters = PackedStringArray(["*.byaml ; BYAML files"])
 		"szs":
 			dialog.filters = PackedStringArray(["*.szs ; SZS files"])
 		"pack":
@@ -565,7 +565,7 @@ func _save_as_dialog(format: String) -> void:
 	dialog.file_selected.connect(func(path: String) -> void:
 		var data: PackedByteArray
 		match format:
-			"byml": data = document.save_to_byaml()
+			"byaml": data = document.save_to_byaml()
 			"szs": data = document.save_to_szs()
 			"pack": data = document.save_to_pack()
 		_write_file(path, data)
@@ -573,6 +573,8 @@ func _save_as_dialog(format: String) -> void:
 		if format == "pack":
 			document.pack_path = path
 			document.source_path = ""
+		elif format == "byaml":
+			document.source_path = path
 		else:
 			document.source_path = path
 	)
