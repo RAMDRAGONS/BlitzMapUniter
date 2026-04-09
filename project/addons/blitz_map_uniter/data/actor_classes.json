@@ -5322,7 +5322,28 @@
 	},
 	"PressureDoor": {
 		"parent": "MapObjBase",
-		"params": {}
+		"params": {
+			"MoveVel": {
+				"type": "float",
+				"default": 0
+			},
+			"MoveVelAcc": {
+				"type": "float",
+				"default": 0
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 0
+			},
+			"MoveReturnAcc": {
+				"type": "float",
+				"default": 0
+			},
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
 	},
 	"PsylliumRespawner": {
 		"parent": "MapObjBase",
@@ -7581,7 +7602,12 @@
 	},
 	"VictoryClamArea": {
 		"parent": "CubeArea",
-		"params": {}
+		"params": {
+			"PutNum": {
+				"type": "int",
+				"default": 0
+			}
+		}
 	},
 	"VictoryClamBank": {
 		"parent": "MapObjBase",
@@ -7967,7 +7993,7 @@
 		"params": {
 			"Team": {
 				"type": "int",
-				"default": -1
+				"default": 2
 			}
 		}
 	},
@@ -8331,6 +8357,224 @@
 	},
 	"EnemyDonketsu": {
 		"parent": "EnemyBase",
+		"params": {}
+	},
+	"GeyserAuto": {
+		"parent": "MapObjBase",
+		"params": {
+			"DelayFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"DurationFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"IntervalFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"IsSwitchDrivenType": {
+				"type": "bool",
+				"default": false
+			},
+			"Length": {
+				"type": "float",
+				"default": 0
+			},
+			"MovingFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"Radius": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"RivalDirectionArea": {
+		"parent": "LocatorBase",
+		"params": {
+			"FixScore": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"ConveyerCullingArea": {
+		"parent": "CubeArea",
+		"params": {}
+	},
+	"MissionShield": {
+		"parent": "Shield",
+		"params": {}
+	},
+	"SwitchDecoy": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"TestGameOverObjOcta": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"BreakCounterMissOcta": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"ShakeshipCraneHead": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SeaSurfaceBindObj": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"GelidiumKingBomb": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"GelidiumKingInkBall": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"GelidiumKingPillar": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"TicketGate": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AirBallMsn": {
+		"parent": "AirBall",
+		"params": {}
+	},
+	"Namazu": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"InkLaser": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BaseCamp": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"GrindRail": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SwitchStep": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"Box": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Gateway": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Missile": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"SwitchPaint": {
+		"parent": "Obj",
+		"params": {}
+	},
+	"CoopIkura": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"BallReturn": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"CoopVendingport": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"Armor": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"AirBallMsnWorld": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"EnemyGelidiumKing": {
+		"parent": "EnemyBossBase",
+		"params": {}
+	},
+	"EnemyGelidiumKing_Mark2": {
+		"parent": "EnemyGelidiumKing",
+		"params": {}
+	},
+	"EnemyGelidiumKing_Mark4": {
+		"parent": "EnemyGelidiumKing",
+		"params": {}
+	},
+	"EnemyHangKing": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyInkRail": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyRollerKingTest": {
+		"parent": "EnemyRollerKing",
+		"params": {}
+	},
+	"EnemyShelterHideMan2": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyStampKing2": {
+		"parent": "EnemyBossBase",
+		"params": {}
+	},
+	"EnemyStarFish": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemySummoner": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTakoNyokki": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTakopodDev": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTakopterForBoss": {
+		"parent": "EnemyTakopter",
+		"params": {}
+	},
+	"EnemyTakoTank": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTestMan": {
+		"parent": "EnemyBase",
+		"params": {}
+	},
+	"EnemyTestMan2": {
+		"parent": "EnemyTestMan",
+		"params": {}
+	},
+	"Decoy": {
+		"parent": "MapObjBase",
+		"params": {}
+	},
+	"GeyserAutoOcta": {
+		"parent": "GeyserAuto",
 		"params": {}
 	}
 }

@@ -188,9 +188,6 @@
 	"DamageSuddenDeathObjOcta": {
 		"class": "DamageSuddenDeathObjOcta"
 	},
-	"DefenceGoalLastBossAreaOcta": {
-		"class": "DefenceGoalLastBossAreaOcta"
-	},
 	"Deli_Octa16FenceA_NoFld": {
 		"class": "DesignerObj",
 		"res": "Fld_Deli_Octa16",
@@ -10061,13 +10058,8 @@
 		"class": "DeadAreaVBallOcta"
 	},
 	"Obj_Decoy": {
-		"class": "",
-		"params": {
-			"Team": {
-				"type": "int",
-				"default": 2
-			}
-		}
+		"class": "Decoy",
+		"params": {}
 	},
 	"Obj_DefenceGoalBigOcta": {
 		"class": "DefenceGoalOcta",
@@ -11713,9 +11705,8 @@
 		"res": "Obj_InkBar"
 	},
 	"Obj_GeyserAutoOcta": {
-		"class": "InkBarOcta",
-		"res": "Obj_InkBar_Octa",
-		"fmdb": "Obj_InkBar_Base"
+		"class": "GeyserAutoOcta",
+		"params": {}
 	},
 	"Obj_GeyserCoop": {
 		"class": "DesignerObj",
@@ -24200,5 +24191,1025 @@
 		"class": "Field",
 		"res": "TestField886",
 		"fmdb": ""
+	},
+	"PressureDoor": {
+		"class": "PressureDoor",
+		"params": {
+			"MoveVel": {
+				"type": "float",
+				"default": 0
+			},
+			"MoveVelAcc": {
+				"type": "float",
+				"default": 0
+			},
+			"MoveReturnVel": {
+				"type": "float",
+				"default": 0
+			},
+			"MoveReturnAcc": {
+				"type": "float",
+				"default": 0
+			},
+			"Railable__SolveType": {
+				"type": "int",
+				"default": 0
+			}
+		}
+	},
+	"GeyserAuto": {
+		"class": "GeyserAuto",
+		"params": {
+			"DelayFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"DurationFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"IntervalFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"IsSwitchDrivenType": {
+				"type": "bool",
+				"default": false
+			},
+			"Length": {
+				"type": "float",
+				"default": 0
+			},
+			"MovingFrame": {
+				"type": "int",
+				"default": 0
+			},
+			"Radius": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"RivalDirectionArea": {
+		"class": "RivalDirectionArea",
+		"params": {
+			"FixScore": {
+				"type": "float",
+				"default": 0
+			}
+		}
+	},
+	"ConveyerCullingArea": {
+		"class": "ConveyerCullingArea",
+		"params": {}
+	},
+	"MissionShield": {
+		"class": "MissionShield",
+		"params": {}
+	},
+	"ItemWithPedestal": {
+		"class": "ItemWithPedestal",
+		"params": {}
+	},
+	"EnemyTestMan": {
+		"class": "EnemyTestMan",
+		"params": {}
+	},
+	"EnemyTestMan2": {
+		"class": "EnemyTestMan2",
+		"params": {}
+	},
+	"SwitchDecoy": {
+		"class": "SwitchDecoy",
+		"params": {}
+	},
+	"EnemySakediver": {
+		"class": "CoopEnemySakediver",
+		"params": {}
+	},
+	"EnemySakedozer": {
+		"class": "CoopEnemySakedozer",
+		"params": {}
+	},
+	"EnemySakeflyer": {
+		"class": "CoopEnemySakeflyer",
+		"params": {}
+	},
+	"EnemySakelienBagman": {
+		"class": "CoopEnemySakelienBagman",
+		"params": {}
+	},
+	"EnemySakelienBagmanLarge": {
+		"class": "CoopEnemySakelienBagmanLarge",
+		"params": {}
+	},
+	"EnemySakelienBomber": {
+		"class": "CoopEnemySakelienBomber",
+		"params": {}
+	},
+	"EnemySakelienCannon": {
+		"class": "CoopEnemySakelienCannon",
+		"params": {}
+	},
+	"EnemySakelienCup": {
+		"class": "CoopEnemySakelienCup",
+		"params": {}
+	},
+	"EnemySakelienCupTwins": {
+		"class": "CoopEnemySakelienCupTwins",
+		"params": {}
+	},
+	"EnemySakelienEscape": {
+		"class": "CoopEnemySakelienEscape",
+		"params": {}
+	},
+	"EnemySakelienGeyser": {
+		"class": "CoopEnemySakelienGeyser",
+		"params": {}
+	},
+	"EnemySakelienGolden": {
+		"class": "CoopEnemySakelienGolden",
+		"params": {}
+	},
+	"EnemySakelienLarge": {
+		"class": "CoopEnemySakelienLarge",
+		"params": {}
+	},
+	"EnemySakelienShield": {
+		"class": "CoopEnemySakelienShield",
+		"params": {}
+	},
+	"EnemySakelienSmall": {
+		"class": "CoopEnemySakelienSmall",
+		"params": {}
+	},
+	"EnemySakelienSnake": {
+		"class": "CoopEnemySakelienSnake",
+		"params": {}
+	},
+	"EnemySakelienStandard": {
+		"class": "CoopEnemySakelienStandard",
+		"params": {}
+	},
+	"EnemySakelienTower": {
+		"class": "CoopEnemySakelienTower",
+		"params": {}
+	},
+	"EnemySakepuncher": {
+		"class": "CoopEnemySakepuncher",
+		"params": {}
+	},
+	"EnemySakerocket": {
+		"class": "CoopEnemySakerocket",
+		"params": {}
+	},
+	"EnemyGelidiumKing": {
+		"class": "EnemyGelidiumKing",
+		"params": {}
+	},
+	"EnemyGelidiumKing_Mark2": {
+		"class": "EnemyGelidiumKing_Mark2",
+		"params": {}
+	},
+	"EnemyGelidiumKing_Mark4": {
+		"class": "EnemyGelidiumKing_Mark4",
+		"params": {}
+	},
+	"EnemyHangKing": {
+		"class": "EnemyHangKing",
+		"params": {}
+	},
+	"EnemyStampKing2": {
+		"class": "EnemyStampKing2",
+		"params": {}
+	},
+	"EnemySummoner": {
+		"class": "EnemySummoner",
+		"params": {}
+	},
+	"EnemyInkRail": {
+		"class": "EnemyInkRail",
+		"params": {}
+	},
+	"EnemyStarFish": {
+		"class": "EnemyStarFish",
+		"params": {}
+	},
+	"EnemyShelterHideMan2": {
+		"class": "EnemyShelterHideMan2",
+		"params": {}
+	},
+	"EnemyTakoNyokki": {
+		"class": "EnemyTakoNyokki",
+		"params": {}
+	},
+	"EnemyTakoTank": {
+		"class": "EnemyTakoTank",
+		"params": {}
+	},
+	"EnemyTakopodDev": {
+		"class": "EnemyTakopodDev",
+		"params": {}
+	},
+	"EnemyTakopterForBoss": {
+		"class": "EnemyTakopterForBoss",
+		"params": {}
+	},
+	"EnemyRollerKingTest": {
+		"class": "EnemyRollerKingTest",
+		"params": {}
+	},
+	"EnemySakepuncherBulletPunch": {
+		"class": "CoopEnemySakepuncherBulletPunch",
+		"params": {}
+	},
+	"EnemySakepuncherBulletSimpl": {
+		"class": "CoopEnemySakepuncherBulletSimpl",
+		"params": {}
+	},
+	"EnemySakerocketBullet": {
+		"class": "CoopEnemySakerocketBullet",
+		"params": {}
+	},
+	"GelidiumKingBomb": {
+		"class": "GelidiumKingBomb",
+		"params": {}
+	},
+	"GelidiumKingInkBall": {
+		"class": "GelidiumKingInkBall",
+		"params": {}
+	},
+	"GelidiumKingPillar": {
+		"class": "GelidiumKingPillar",
+		"params": {}
+	},
+	"TestGameOverObjOcta": {
+		"class": "TestGameOverObjOcta",
+		"params": {}
+	},
+	"BreakCounterMissOcta": {
+		"class": "BreakCounterMissOcta",
+		"params": {}
+	},
+	"LiftOcta": {
+		"class": "LiftOcta",
+		"params": {}
+	},
+	"ShakeshipCraneHead": {
+		"class": "ShakeshipCraneHead",
+		"params": {}
+	},
+	"SeaSurfaceBindObj": {
+		"class": "SeaSurfaceBindObj",
+		"params": {}
+	},
+	"Obj_RivalDirectionArea": {
+		"params": {
+			"FixScore": {
+				"type": "float",
+				"default": 0.0
+			}
+		},
+		"class": "RivalDirectionArea"
+	},
+	"DefenceGoalLastBossAreaOcta": {
+		"params": {},
+		"class": "DefenceGoalLastBossAreaOcta"
+	},
+	"Obj_LandingDieCancelAreaOcta": {
+		"params": {},
+		"class": "LandingDieCancelAreaOcta"
+	},
+	"Obj_SequenceEventAreaOcta": {
+		"params": {},
+		"class": "SequenceEventAreaOcta"
+	},
+	"Obj_TimeLimitStartAreaOcta": {
+		"params": {
+			"StartWaitFrame": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"class": "TimeLimitStartAreaOcta"
+	},
+	"Obj_SoundEventAreaOcta": {
+		"params": {},
+		"class": "SoundEventAreaOcta"
+	},
+	"Obj_SoundDestroyAreaOcta": {
+		"params": {},
+		"class": "SoundDestroyAreaOcta"
+	},
+	"Obj_WorldAreaJumpTargetPos": {
+		"params": {
+			"AreaNo": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"class": "WorldAreaJumpTargetPos"
+	},
+	"Obj_WorldAreaJumpTargetPosEntry": {
+		"params": {
+			"AreaNo": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"class": "WorldAreaJumpTargetPosEntry"
+	},
+	"Obj_WorldAreaJumpTargetPosExit": {
+		"params": {
+			"AreaNo": {
+				"type": "int",
+				"default": 0
+			}
+		},
+		"class": "WorldAreaJumpTargetPosExit"
+	},
+	"Obj_EnemyTakoDiverAreaType": {
+		"params": {},
+		"class": "EnemyTakoDiverAreaType"
+	},
+	"Obj_MapKeepOutAreaOcta": {
+		"params": {},
+		"class": "MapKeepOutAreaOcta"
+	},
+	"Obj_AirBallMsn": {
+		"params": {},
+		"class": "AirBallMsn"
+	},
+	"Obj_AirBallMsnWorld0": {
+		"params": {},
+		"class": "AirBallMsnWorld"
+	},
+	"Obj_Armor_Octa": {
+		"params": {},
+		"class": "Armor"
+	},
+	"Obj_BallReturn": {
+		"params": {},
+		"class": "BallReturn"
+	},
+	"Obj_BaseCamp_Octa_Routemap": {
+		"params": {},
+		"class": "BaseCamp"
+	},
+	"Obj_Blowout_base": {
+		"params": {},
+		"class": "Blowouts"
+	},
+	"Obj_Blowout_end": {
+		"params": {},
+		"class": "Blowouts"
+	},
+	"Obj_Blowout_floor": {
+		"params": {},
+		"class": "Blowouts"
+	},
+	"Obj_Blowout_roll": {
+		"params": {},
+		"class": "Blowouts"
+	},
+	"Obj_BombFlowerBase": {
+		"params": {},
+		"class": "BombFlower"
+	},
+	"Obj_BombFlowerFugu": {
+		"params": {},
+		"class": "BombFlower"
+	},
+	"Obj_Box01L": {
+		"params": {},
+		"class": "Box"
+	},
+	"Obj_Box01S": {
+		"params": {},
+		"class": "Box"
+	},
+	"Obj_CSGlass_Broken_Octa": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_CSLockerOpen_Octa": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_CSLocker_Move_Octa": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_CSLocker_Octa": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_CSMachine_Octa": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_CSMachine_On_Octa": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_CentralStationTelephone_Octa": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_Close": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_CoopIkura": {
+		"params": {},
+		"class": "CoopIkura"
+	},
+	"Obj_CoopVendingport_KeepOut": {
+		"params": {},
+		"class": "CoopVendingport"
+	},
+	"Obj_DashPanel_under1": {
+		"params": {},
+		"class": "DashPanel"
+	},
+	"Obj_DashPanel_under2": {
+		"params": {},
+		"class": "DashPanel"
+	},
+	"Obj_GatewayInvisible": {
+		"params": {},
+		"class": "Gateway"
+	},
+	"Obj_GelidiumKingBomb": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_GelidiumKingInkBall": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_GelidiumKingPillar_1st": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_GelidiumKingPillar_2nd": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_GelidiumKing_Mark4Pillar1": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_GelidiumKing_Mark4Pillar2": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_GelidiumKing_Mark4Pillar3": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_GeneralSlope": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_Geyser3M": {
+		"params": {},
+		"class": "Geyser"
+	},
+	"Obj_Geyser3MOff": {
+		"params": {},
+		"class": "Geyser"
+	},
+	"Obj_Geyser3MOn": {
+		"params": {},
+		"class": "Geyser"
+	},
+	"Obj_GoalShachi": {
+		"params": {},
+		"class": "Goal"
+	},
+	"Obj_Goal_Octa": {
+		"params": {},
+		"class": "Goal"
+	},
+	"Obj_GrindRailBase": {
+		"params": {},
+		"class": "GrindRail"
+	},
+	"Obj_GrindRailEnd": {
+		"params": {},
+		"class": "GrindRail"
+	},
+	"Obj_GrindRailLineLight": {
+		"params": {},
+		"class": "GrindRail"
+	},
+	"Obj_GrindRailLine_VS": {
+		"params": {},
+		"class": "GrindRail"
+	},
+	"Obj_InkBar_Bar": {
+		"params": {},
+		"class": "InkBar"
+	},
+	"Obj_InkBar_Base": {
+		"params": {},
+		"class": "InkBar"
+	},
+	"Obj_InkLaser": {
+		"params": {},
+		"class": "InkLaser"
+	},
+	"Obj_InkRailBase": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_InkRailBase_VS": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_InkRailPlayer": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_InkRailSmall": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_InkRailSmallBase": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_InkRailSmallBase_VS": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_InkRailSmall_VS": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_ItemNull": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_LastBossKey": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_LastBossKey1": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_LastBossKeyDummy": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_Missile": {
+		"params": {},
+		"class": "Missile"
+	},
+	"Obj_Namazu": {
+		"params": {},
+		"class": "Namazu"
+	},
+	"Obj_NamazuDummy": {
+		"params": {},
+		"class": "Namazu"
+	},
+	"Obj_NamazuRog": {
+		"params": {},
+		"class": "Namazu"
+	},
+	"Obj_NamazuRogDummy": {
+		"params": {},
+		"class": "Namazu"
+	},
+	"Obj_PaintLiftTurn": {
+		"params": {},
+		"class": "Lift"
+	},
+	"Obj_PlazaCoopDoorClose": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaCoopDoorOpen": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaNewsMonitaM": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_Amb00": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink00": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink01": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink02": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink03": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink04": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink05": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink06": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink07": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink08": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink09": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink10": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_BeatLink11": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_Reset": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_PlazaTVB_fes_Tl00": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_SpongeVersusRectangle2": {
+		"params": {},
+		"class": "Sponge"
+	},
+	"Obj_StaffRollTV": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_SwitchPaintOff": {
+		"params": {},
+		"class": "SwitchPaint"
+	},
+	"Obj_SwitchPaintOff_S": {
+		"params": {},
+		"class": "SwitchPaint"
+	},
+	"Obj_SwitchPaintOn": {
+		"params": {},
+		"class": "SwitchPaint"
+	},
+	"Obj_SwitchPaintOn_A": {
+		"params": {},
+		"class": "SwitchPaint"
+	},
+	"Obj_SwitchPaintOn_B": {
+		"params": {},
+		"class": "SwitchPaint"
+	},
+	"Obj_SwitchPaintOn_S": {
+		"params": {},
+		"class": "SwitchPaint"
+	},
+	"Obj_SwitchPaintPainting": {
+		"params": {},
+		"class": "SwitchPaint"
+	},
+	"Obj_SwitchStepOff": {
+		"params": {},
+		"class": "SwitchStep"
+	},
+	"Obj_SwitchStepOn": {
+		"params": {},
+		"class": "SwitchStep"
+	},
+	"Obj_SwitchStepWait": {
+		"params": {},
+		"class": "SwitchStep"
+	},
+	"Obj_TicketGate_Octa_sutter": {
+		"params": {},
+		"class": "TicketGate"
+	},
+	"Obj_VballBumper": {
+		"params": {},
+		"class": "MapObjBase"
+	},
+	"Obj_VictoryLift2M": {
+		"params": {},
+		"class": "VictoryLift"
+	},
+	"Obj_VictoryLift3M": {
+		"params": {},
+		"class": "VictoryLift"
+	},
+	"Obj_VictoryLift4M": {
+		"params": {},
+		"class": "VictoryLift"
+	},
+	"Obj_nozzle": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_nozzleEnd": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_nozzleEnd_VS": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_nozzleSmall": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_nozzleSmall_VS": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Obj_nozzle_VS": {
+		"params": {},
+		"class": "InkRail"
+	},
+	"Npc_SubwayConductor_Octa": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_Commander_Octa": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_IdolA_Boss_Sunglass": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_IdolB_Kimono_Umbrella": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_CustomShopJr_Cellphone": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_Judge_CushionF": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_Judge_Cushion": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_Judge_Flag": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_JudgeJr_Flag": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_Jerry03": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_GearShop": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_ShoesShop": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_TshirtsShop": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Npc_WeaponsShop": {
+		"params": {},
+		"class": "NpcBase"
+	},
+	"Enm_Takolien_Octa": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_TakolienS_Octa": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_OctLeg_Octa": {
+		"class": "EnemyCharge",
+		"params": {}
+	},
+	"Enm_Takopter_Octa": {
+		"class": "EnemyTakopterOcta",
+		"params": {}
+	},
+	"Enm_OctLegSpinner_Octa": {
+		"class": "EnemySpinner",
+		"params": {}
+	},
+	"Enm_CoopDiverFin": {
+		"class": "CoopEnemySakediver",
+		"params": {}
+	},
+	"Enm_CoopSalmonCup_Open": {
+		"class": "CoopEnemySakelienCup",
+		"params": {}
+	},
+	"Enm_CoopSalmonCup_Cover": {
+		"class": "CoopEnemySakelienCup",
+		"params": {}
+	},
+	"Enm_CoopSalmonCup_Pillar": {
+		"class": "CoopEnemySakelienCup",
+		"params": {}
+	},
+	"Enm_CoopSalmonCup2_LauncherL": {
+		"class": "CoopEnemySakelienCup",
+		"params": {}
+	},
+	"Enm_CoopSalmonCup2_LauncherR": {
+		"class": "CoopEnemySakelienCup",
+		"params": {}
+	},
+	"Enm_CoopSalmonSnake_Head": {
+		"class": "CoopEnemySakelienSnake",
+		"params": {}
+	},
+	"Enm_CoopSalmonSnake_Body": {
+		"class": "CoopEnemySakelienSnake",
+		"params": {}
+	},
+	"Enm_CoopWeapon": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_CoopWeaponS00": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_CoopWeapon00": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_CoopWeapon01": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_CoopSalmonTowerBlock": {
+		"class": "CoopEnemySakelienTower",
+		"params": {}
+	},
+	"Enm_CoopSalmonTowerBlockBase": {
+		"class": "CoopEnemySakelienTower",
+		"params": {}
+	},
+	"Enm_BakeryKing_body1": {
+		"class": "EnemyBakeryKing",
+		"params": {}
+	},
+	"Enm_BakeryKing_body2": {
+		"class": "EnemyBakeryKing",
+		"params": {}
+	},
+	"Enm_BakeryKing_finalcrash": {
+		"class": "EnemyBakeryKing",
+		"params": {}
+	},
+	"Enm_BossHole": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_HangStopcock": {
+		"class": "EnemyHangedKing",
+		"params": {}
+	},
+	"Enm_HangKing": {
+		"class": "EnemyHangKing",
+		"params": {}
+	},
+	"Enm_TakopterForBoss": {
+		"class": "EnemyTakopterForBoss",
+		"params": {}
+	},
+	"Enm_RailKingTakoyaki": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_RailKingBulletCannon": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_RailKingInkShower": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_RailKingExpand": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_RailKingPunchCannon": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_RailKingArm": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_RailKingPunchR": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_Waist": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_StampFace": {
+		"class": "EnemyStampKingDeco",
+		"params": {}
+	},
+	"Enm_Helmet0": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_Panel": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_Panel00": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_Break": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_TakolienBounceVehicleFix": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_TakolienVehicleFix": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_TakolienSVehicleFix": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_TakolienShieldS": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_TakolienVehicleSubmarine": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_TakolienBounceVehicleMove": {
+		"class": "EnemyTakolienMovable",
+		"params": {}
+	},
+	"Enm_TakolienVehicleMove": {
+		"class": "EnemyTakolienMovable",
+		"params": {}
+	},
+	"Enm_TakolienSVehicleSubmarine": {
+		"class": "EnemyTakolienFixed",
+		"params": {}
+	},
+	"Enm_TakolienSVehicleMove": {
+		"class": "EnemyTakolienMovable",
+		"params": {}
+	},
+	"Enm_TestManSecond": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_BossHole_Octa": {
+		"class": "MapObjBase",
+		"params": {}
+	},
+	"Enm_FlyingHohei_Octa": {
+		"class": "EnemyFlyingHoheiOcta",
+		"params": {}
 	}
 }

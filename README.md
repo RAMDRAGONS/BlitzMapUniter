@@ -40,7 +40,7 @@ A Godot 4.6+ editor plugin for viewing and editing Splatoon 2 map layouts stored
 - **Debug Shape Gizmos** showing IDA-verified collision volumes (spheres, capsules, boxes, cylinders) for key actors
 - **Add/Delete** objects and rails with full undo/redo support
 - **Save** to BYAML, SZS, or Pack format with SARC alignment preservation
-- **4,300+ Actor Database** with parameters extracted from real game maps
+- **4,630+ Actor Database** with parameters extracted from real game maps and IDA reverse engineering
 
 ---
 
@@ -313,6 +313,17 @@ These settings are stored in Godot's EditorSettings and persist across sessions.
    - Click **Map.pack** to browse a `Map.pack` archive and select an individual map entry
    - Click **File** to open a standalone `.szs` or `.byaml` map file
 
+### Browsing and Filtering
+
+The **MapEditor** dock lists all objects and rails in the loaded map. Use the built-in controls to narrow down the list:
+
+- **Search bar** — Type a name or ID fragment to filter the object list in real-time
+- **Layer filter** — Restrict the list to a specific layer (e.g. `Cmn`, `Vss`, `Fld`)
+- **Link filter** — Show only objects with links, only unlinked objects, or all
+- **Layer visibility** — Toggle checkboxes next to layer names to show/hide entire layers in the viewport
+
+Click any item in the list to select and focus on it in the 3D viewport.
+
 ### Navigating the Viewport
 
 Objects are displayed in the 3D viewport with models (if cached) or colored placeholders:
@@ -328,6 +339,7 @@ Objects are displayed in the 3D viewport with models (if cached) or colored plac
 - **Area objects** display a per-type icon sprite; selecting an area object reveals a semi-transparent volume mesh showing its spatial extent. `PaintedArea_Cylinder` uses a cylindrical volume.
 - **Rails** render as connected lines; Bézier rails show smooth curves through control points
 - **Links** between objects are visualized as debug lines in the viewport
+- **Debug gizmos** show collision/interaction volumes for specific actors (e.g., Geyser blast zones, RespawnPoint radii, spawn boxes). These are derived from IDA reverse-engineered collision shapes.
 
 ### Editing Objects
 
@@ -366,7 +378,7 @@ Objects are displayed in the 3D viewport with models (if cached) or colored plac
 The plugin ships with a split actor database for **4,300+ actors**, using IDA-confirmed class hierarchy:
 
 - **`actordb.json`** — compact actor→{class, res, fmdb} mapping (670 KB)
-- **`actor_classes.json`** — class definitions with inheritance chain and parameter schemas (197 KB)
+- **`actor_classes.json`** — class definitions with inheritance chain and parameter schemas (149 KB)
 
 This replaces the old monolithic `actor_db.json` (4.3 MB) with an 80% size reduction by eliminating redundant parameter duplication across actors of the same class.
 
@@ -374,7 +386,7 @@ Data sources:
 - `Mush.release.pack` (Mush/ActorDb.release.byml) - 5.5.2
 - Standalone ActorDb files from versions 1.0.0 through 3.1.0
 - Parameter data mined from 274 maps in 5.5.2's `Map.pack` (63,000+ objects)
-- Class hierarchy extracted via RTTI analysis of 3.1.0 binary (516/600 classes confirmed)
+- Class hierarchy extracted via RTTI analysis of 3.1.0 binary (684 classes confirmed)
 
 Each class entry includes:
 - **parent** — parent class name from IDA-confirmed RTTI hierarchy

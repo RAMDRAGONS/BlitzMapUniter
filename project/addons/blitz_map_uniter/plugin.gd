@@ -87,7 +87,10 @@ func _handles(object: Object) -> bool:
 	return false
 
 func _forward_3d_gui_input(camera: Camera3D, event: InputEvent) -> int:
-	# We don't need to intercept 3D input — just redirect selection in _make_visible
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_DELETE:
+			_delete_selected_map_nodes()
+			return EditorPlugin.AFTER_GUI_INPUT_STOP
 	return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 ## When Godot selects a child mesh/label, redirect to the parent actor node.
@@ -332,7 +335,7 @@ func _create_visual_mesh(obj: MapObject) -> Node3D:
 		var is_area := _is_area_scale_object(ucn)
 		var unit_size := 10.0 if is_area else 1.0
 		var half := unit_size / 2.0
-		var is_cylinder := ucn.contains("Cylinder")
+		var is_cylinder := ucn.contains("Cylinder") or ucn.ends_with("Pole")
 
 		# Volume mesh — hidden by default, shown only when selected
 		if is_cylinder:
@@ -1252,6 +1255,127 @@ func _undo_add_rail(rail: MapRail, rail_node: Node3D, rails_root: Node3D, create
 		rails_root.get_parent().remove_child(rails_root)
 
 # ============================================================
+# Delete Objects/Rails with Undo
+# ============================================================
+
+## Deletes all selected map object/rail nodes with undo support.
+func _delete_selected_map_nodes() -> void:
+	if not _map_root or not is_instance_valid(_map_root):
+		return
+	if not _dock or not _dock.document:
+		return
+	var selected := get_editor_interface().get_selection().get_selected_nodes()
+	if selected.is_empty():
+		return
+
+	# Collect map nodes (objects and rails) to delete
+	var to_delete: Array[Dictionary] = []
+	for node: Node in selected:
+		if not (node is Node3D):
+			continue
+		var n3d := node as Node3D
+		# Redirect child clicks to parent actor if needed
+		var map_node := _get_map_parent(n3d)
+		if not map_node:
+			continue
+		# If a rail point was selected, redirect to its parent rail
+		if map_node.has_meta("_map_rail_point"):
+			var rail_parent := map_node.get_parent()
+			if rail_parent is Node3D and (rail_parent as Node3D).has_meta("_map_rail"):
+				map_node = rail_parent as Node3D
+			else:
+				continue
+		# Avoid duplicates if both parent and child are selected
+		var already := false
+		for entry: Dictionary in to_delete:
+			if entry["node"] == map_node:
+				already = true
+				break
+		if already:
+			continue
+
+		if map_node.has_meta("_map_object"):
+			var obj_id := str(map_node.get_meta("_map_object_id", ""))
+			var obj: MapObject = _find_object_by_id(obj_id)
+			if obj:
+				to_delete.append({"type": "object", "node": map_node, "obj": obj,
+					"parent": map_node.get_parent()})
+		elif map_node.has_meta("_map_rail"):
+			var rail_id := str(map_node.get_meta("_map_rail_id", ""))
+			var rail: MapRail = _find_rail_by_id(rail_id)
+			if rail:
+				to_delete.append({"type": "rail", "node": map_node, "rail": rail,
+					"parent": map_node.get_parent()})
+
+	if to_delete.is_empty():
+		return
+
+	var ur := get_undo_redo()
+	if ur:
+		var desc := "Delete %d item(s)" % to_delete.size()
+		ur.create_action(desc)
+		for entry: Dictionary in to_delete:
+			if entry["type"] == "object":
+				ur.add_do_method(self, &"_do_delete_object", entry["obj"], entry["node"])
+				ur.add_undo_method(self, &"_undo_delete_object", entry["obj"], entry["node"], entry["parent"])
+			elif entry["type"] == "rail":
+				ur.add_do_method(self, &"_do_delete_rail", entry["rail"], entry["node"])
+				ur.add_undo_method(self, &"_undo_delete_rail", entry["rail"], entry["node"], entry["parent"])
+		ur.commit_action()
+	else:
+		for entry: Dictionary in to_delete:
+			if entry["type"] == "object":
+				_do_delete_object(entry["obj"], entry["node"])
+			elif entry["type"] == "rail":
+				_do_delete_rail(entry["rail"], entry["node"])
+
+	get_editor_interface().get_selection().clear()
+
+func _do_delete_object(obj: MapObject, node: Node3D) -> void:
+	_dock.document.objects.erase(obj)
+	if node.get_parent():
+		node.get_parent().remove_child(node)
+	print("BlitzMapUniter: Deleted object %s (%s)" % [obj.id, obj.unit_config_name])
+
+func _undo_delete_object(obj: MapObject, node: Node3D, parent: Node3D) -> void:
+	_dock.document.objects.append(obj)
+	if parent and is_instance_valid(parent):
+		parent.add_child(node)
+		var scene_root := get_editor_interface().get_edited_scene_root()
+		if scene_root:
+			_set_owner_recursive(node, scene_root)
+
+func _do_delete_rail(rail: MapRail, node: Node3D) -> void:
+	_dock.document.rails.erase(rail)
+	if node.get_parent():
+		node.get_parent().remove_child(node)
+	print("BlitzMapUniter: Deleted rail %s (%s)" % [rail.id, rail.unit_config_name])
+
+func _undo_delete_rail(rail: MapRail, node: Node3D, parent: Node3D) -> void:
+	_dock.document.rails.append(rail)
+	if parent and is_instance_valid(parent):
+		parent.add_child(node)
+		var scene_root := get_editor_interface().get_edited_scene_root()
+		if scene_root:
+			_set_owner_recursive(node, scene_root)
+
+func _find_object_by_id(obj_id: String) -> MapObject:
+	if not _dock or not _dock.document:
+		return null
+	for obj: MapObject in _dock.document.objects:
+		if str(obj.id) == obj_id:
+			return obj
+	return null
+
+func _find_rail_by_id(rail_id: String) -> MapRail:
+	if not _dock or not _dock.document:
+		return null
+	for rail: MapRail in _dock.document.rails:
+		if str(rail.id) == rail_id:
+			return rail
+	return null
+
+# ============================================================
 # Scene → Document Sync (Issue 4: sync rail rotation/scale)
 # ============================================================
 
@@ -1288,6 +1412,8 @@ func _sync_node_recursive(node: Node, obj_by_id: Dictionary, rail_by_id: Diction
 				obj.params = n3d.get_meta("_map_params", {})
 				obj.links = n3d.get_meta("_map_links", {})
 				obj.layer = n3d.get_meta("_map_layer", "Default")
+			else:
+				push_warning("BlitzMapUniter: Sync skipped — node '%s' (id=%s) has no matching document object" % [n3d.name, obj_id])
 
 		elif n3d.has_meta("_map_rail"):
 			var rail_id := str(n3d.get_meta("_map_rail_id", ""))

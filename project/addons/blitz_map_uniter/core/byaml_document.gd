@@ -101,18 +101,24 @@ func load_file(path: String) -> bool:
 ## Saves the current document back to BYAML binary.
 func save_to_byaml() -> PackedByteArray:
 	_rebuild_root()
-	return OeadByml.to_binary(root, _is_big_endian, _byaml_version)
+	var data := OeadByml.to_binary(root, _is_big_endian, _byaml_version)
+	if data.is_empty():
+		push_error("ByamlDocument: OeadByml.to_binary returned empty data")
+	return data
 
 ## Saves the current document wrapped in an SZS (Yaz0-compressed SARC).
 ## Uses preserved SARC alignment metadata for 1:1 bitstream compatibility.
 func save_to_szs() -> PackedByteArray:
 	var byaml_data := save_to_byaml()
 	if byaml_data.is_empty():
+		push_error("ByamlDocument: Cannot build SZS — BYAML serialization failed")
 		return PackedByteArray()
-	# Use the original entry name if available, otherwise derive from current_file
 	var entry_name := _szs_entry_name if _szs_entry_name else current_file.get_basename() + ".byaml"
 	var files: Array = [{"name": entry_name, "data": byaml_data}]
 	var sarc_data := OeadSarc.build(files, _szs_endian, _szs_min_alignment)
+	if sarc_data.is_empty():
+		push_error("ByamlDocument: OeadSarc.build returned empty data")
+		return PackedByteArray()
 	return OeadYaz0.compress(sarc_data)
 
 ## Saves the entire Map.pack with the current entry updated in-place.
@@ -122,6 +128,7 @@ func save_to_pack() -> PackedByteArray:
 		return PackedByteArray()
 	var szs_data := save_to_szs()
 	if szs_data.is_empty():
+		push_error("ByamlDocument: Cannot build pack — SZS serialization failed")
 		return PackedByteArray()
 	# Replace the current entry in the pack
 	var updated := false
@@ -135,7 +142,10 @@ func save_to_pack() -> PackedByteArray:
 	if not updated:
 		push_warning("ByamlDocument: Current entry '%s' not found in pack, appending" % current_file)
 		files.append({"name": current_file, "data": szs_data})
-	return OeadSarc.build(files, _pack_endian, _pack_min_alignment)
+	var pack_data := OeadSarc.build(files, _pack_endian, _pack_min_alignment)
+	if pack_data.is_empty():
+		push_error("ByamlDocument: OeadSarc.build failed for pack with %d entries" % files.size())
+	return pack_data
 
 # ================================
 # Internal methods

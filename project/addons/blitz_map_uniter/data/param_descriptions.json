@@ -656,5 +656,9 @@
 	"ToLiftDemoDecoy": "Link target ID for a demo decoy actor associated with this lift. Used for cutscene/demo sequences involving the platform. [IDA: LiftParams]",
 	"ToNotPaintableArea": "Link target ID for a NotPaintableArea that moves with this lift. Prevents ink from being painted on surfaces within the linked area while the lift moves. [IDA: LiftParams]",
 	"ToSuperJumpSafePosBuffer": "Link target ID for a SuperJumpSafePosBuffer that moves with this lift. Defines safe super jump landing positions that follow the platform. [IDA: LiftParams]",
-	"ToSwitchAllDead": "Link target ID for a switch that activates when all enemies in the group are defeated. [IDA: EnemyBaseParams]"
+	"ToSwitchAllDead": "Link target ID for a switch that activates when all enemies in the group are defeated. [IDA: EnemyBaseParams]",
+	"FixScore": "Fixed movement score value for rival AI direction guidance in this area",
+	"RoomAreaId": "Link identifier for a Salmon Run room partition. Used by CoopRoomArea to define discrete rooms.",
+	"SpawnPointZakoId": "Link to the enemy spawn point associated with this Salmon Run room.",
+	"PutNum": "Number of Victory Clams to place within this area volume. Controls how many clams spawn in the VictoryClamArea zone."
 }

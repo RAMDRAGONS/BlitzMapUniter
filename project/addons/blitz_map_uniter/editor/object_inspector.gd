@@ -178,13 +178,16 @@ func _add_param_editor(param_name: String, value: Variant, info: Dictionary) -> 
 
 		var set_btn := Button.new()
 		set_btn.text = "Set"
-		set_btn.tooltip_text = "Set to empty string"
+		set_btn.tooltip_text = "Set to default value"
 		var captured_name := param_name
+		var default_val: Variant = info.get("default", "")
 		set_btn.pressed.connect(func() -> void:
-			_current_obj.params[captured_name] = ""
+			if default_val == null:
+				_current_obj.params[captured_name] = ""
+			else:
+				_current_obj.params[captured_name] = default_val
 			_mark_dirty()
-			# Re-inspect to rebuild the UI
-			inspect_object(_current_obj, _actor_db, _current_doc)
+			_reinspect_deferred.call_deferred()
 		)
 		hbox.add_child(set_btn)
 
@@ -246,7 +249,7 @@ func _add_param_editor(param_name: String, value: Variant, info: Dictionary) -> 
 		null_btn.pressed.connect(func() -> void:
 			_current_obj.params[captured_name2] = null
 			_mark_dirty()
-			inspect_object(_current_obj, _actor_db, _current_doc)
+			_reinspect_deferred.call_deferred()
 		)
 		hbox.add_child(null_btn)
 
@@ -261,3 +264,7 @@ func _mark_dirty() -> void:
 	if _current_doc:
 		_current_doc.is_dirty = true
 		_current_doc.document_modified.emit()
+
+func _reinspect_deferred() -> void:
+	if _current_obj and _actor_db and _current_doc:
+		inspect_object(_current_obj, _actor_db, _current_doc)
